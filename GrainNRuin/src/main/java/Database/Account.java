@@ -11,23 +11,27 @@ import java.util.Random;
  * @author Engilo Grave
  */
 public class Account {
+    
     private String username;
     private String password;
     
     Random rnd = new Random();
     int keyID=0;
     
+    private SaveState ss1;
+    private SaveState ss2;
+    
     public Account(){}
-    public void newAccount(String username, String password){
+    public Account(String username, String password){
         this.username = username;
         this.password = password;
+        generateId();
     }
     
     public int getId(){
         return this.keyID;
     }
-    public void generateId(){
+    private void generateId(){
         this.keyID = rnd.nextInt(100);
     }
-    
 }
