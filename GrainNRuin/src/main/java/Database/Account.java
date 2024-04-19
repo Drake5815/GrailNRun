@@ -16,22 +16,45 @@ public class Account {
     private String password;
     
     Random rnd = new Random();
-    int keyID=0;
+    private int keyID=0;
     
-    private SaveState ss1;
-    private SaveState ss2;
+    private int saveKeyID1 = 0;
+    private int saveKeyID2 = 0;
+    
+    Database_Manager dbMngr = new Database_Manager();
     
     public Account(){}
     public Account(String username, String password){
         this.username = username;
         this.password = password;
-        generateId();
+    }
+    
+    public void createAcc(String username, String password){
+        this.username = username;
+        this.password = password;
+        this.keyID = generateRndId();
+    }
+    public void getAcc(String user, String pass){
+         
     }
     
     public int getId(){
+        //Return this class keyID for SaveState;
         return this.keyID;
     }
-    private void generateId(){
-        this.keyID = rnd.nextInt(100);
+    private int generateRndId(){
+        //Generate rnd original key for SaveState reference
+        return rnd.nextInt(100);
+    }
+    
+    private boolean checkOriginKey(){
+        //Check for duplicates
+        
+        //Check table for same set of ID
+           //if yes return false for duplicant
+           //if no return true for original
+        
+        
+        return false;
     }
 }
