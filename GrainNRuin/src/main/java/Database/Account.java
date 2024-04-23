@@ -12,16 +12,10 @@ import java.util.Random;
  */
 public class Account {
     
+    Database_Manager DB_Manager = new Database_Manager();
+    
     private String username;
     private String password;
-    
-    Random rnd = new Random();
-    private int keyID=0;
-    
-    private int saveKeyID1 = 0;
-    private int saveKeyID2 = 0;
-    
-    Database_Manager dbMngr = new Database_Manager();
     
     public Account(){}
     public Account(String username, String password){
@@ -32,29 +26,13 @@ public class Account {
     public void createAcc(String username, String password){
         this.username = username;
         this.password = password;
-        this.keyID = generateRndId();
-    }
-    public void getAcc(String user, String pass){
-         
     }
     
-    public int getId(){
-        //Return this class keyID for SaveState;
-        return this.keyID;
-    }
-    private int generateRndId(){
-        //Generate rnd original key for SaveState reference
-        return rnd.nextInt(100);
+    public Account getAccount(){
+        
+        
+        
+        return null;
     }
     
-    private boolean checkOriginKey(){
-        //Check for duplicates
-        
-        //Check table for same set of ID
-           //if yes return false for duplicant
-           //if no return true for original
-        
-        
-        return false;
-    }
 }

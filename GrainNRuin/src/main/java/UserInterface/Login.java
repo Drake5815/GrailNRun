@@ -121,7 +121,10 @@ public class Login extends javax.swing.JFrame {
         String username = jTextField1.getText();
         String password = jTextField2.getText();
         
+        //Refer to the database if they have this entry
         
+        
+        //If not highlight that there is no such account
         
     }//GEN-LAST:event_btnLogInActionPerformed
 

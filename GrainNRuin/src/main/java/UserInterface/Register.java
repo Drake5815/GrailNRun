@@ -121,7 +121,11 @@ public class Register extends javax.swing.JFrame {
     private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
         String Username = txtUser.getText();
         String Password = txtPass.getText();
-         
+        
+        //refer to database if there is a such account with a username give error
+        
+        //Insert account to database
+        
     }//GEN-LAST:event_btnRegisterActionPerformed
 
     /**
