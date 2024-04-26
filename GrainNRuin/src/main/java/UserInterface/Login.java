@@ -5,7 +5,7 @@
 package UserInterface;
 
 import Database.Account;
-import Database.Database_Manager;
+import Manager.Database_Manager;
 
 /**
  *
