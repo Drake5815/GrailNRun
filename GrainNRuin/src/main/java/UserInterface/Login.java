@@ -6,6 +6,7 @@ package UserInterface;
 
 import Database.Account;
 import Manager.Database_Manager;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -125,7 +126,7 @@ public class Login extends javax.swing.JFrame {
         
         
         //If not highlight that there is no such account
-        
+        JOptionPane.showMessageDialog(this, "Something", "Example", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnLogInActionPerformed
 
     private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
@@ -177,4 +178,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
+
+
 }
