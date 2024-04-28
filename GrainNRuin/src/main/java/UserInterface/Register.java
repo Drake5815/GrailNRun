@@ -123,12 +123,14 @@ public class Register extends javax.swing.JFrame {
 
     private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
         if(!txtUsername.getText().isEmpty() && !txtPassword.getText().isEmpty()){
-            acc.setUsername(txtUsername.getText());
-            acc.setPassword(txtPassword.getText());
-            if(){
+            if(!acc.checkAcc(txtUsername.getText())){
+                acc.setUsername(txtUsername.getText());
+                acc.setPassword(txtPassword.getText());
+                
+                //Example
                 
             } else {
-                
+                JOptionPane.showMessageDialog(this, "Username is already in out System.", "Error", JOptionPane.ERROR);
             }
             
         } else {
