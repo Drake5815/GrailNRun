@@ -77,17 +77,17 @@ public class Account {
             String DB_Username = document.getString("Username");
             String DB_Password = document.getString("Password");
             
-            return (this.username == null ? DB_Username == null : this.username.equals(DB_Username)) && this.password.equals(DB_Password);
+            return this.username.equals(DB_Username) && this.password.equals(DB_Password);
             
         } catch(Exception e){
             System.out.println("System Error : " + e);
             return false;
         }
-    }
+    }    
     // Comparison
-    public boolean checkAcc(){
+    public boolean checkAcc(String Username){
         try{
-            return DB_Manager.Exist("Username", this.username);
+            return DB_Manager.Exist("Username", Username);
         } catch(Exception e){
             System.out.println("System Error : " + e);
         }
