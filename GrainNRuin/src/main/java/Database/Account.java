@@ -50,7 +50,7 @@ public class Account {
     }
     
     //INSERTING FROM DATABASE
-    private void Insert(){
+    public void Insert(){
         DB_Manager.setAppendSingle("Username", this.username);
         DB_Manager.setAppendSingle("Password", this.password);
         if(saveState != null){
@@ -68,7 +68,6 @@ public class Account {
         }
     }
     
-    
     //Comparing From Database / LOG-IN
     public boolean Authenticate(){
         try{
@@ -83,16 +82,14 @@ public class Account {
             System.out.println("System Error : " + e);
             return false;
         }
-    }    
+    }
     // Comparison
     public boolean checkAcc(String Username){
         try{
             return DB_Manager.Exist("Username", Username);
         } catch(Exception e){
             System.out.println("System Error : " + e);
+            return false;
         }
-        return false;
     }
-    
-    
 }

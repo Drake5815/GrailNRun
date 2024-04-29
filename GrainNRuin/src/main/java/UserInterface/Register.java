@@ -5,6 +5,7 @@
 package UserInterface;
 
 import Database.Account;
+import java.awt.Color;
 import javax.swing.JOptionPane;
 
 /**
@@ -13,13 +14,21 @@ import javax.swing.JOptionPane;
  */
 public class Register extends javax.swing.JFrame {
     Account acc = new Account();
+    Login login = new Login();
+    
     /**
      * Creates new form Register
      */
     public Register() {
         initComponents();
+        btnInvis();
     }
-
+    private void btnInvis(){
+        btnBack.setOpaque(false);
+        btnBack.setContentAreaFilled(false);
+        btnBack.setBorderPainted(false);
+        btnBack.setForeground(Color.decode("#0000FF"));
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -41,6 +50,7 @@ public class Register extends javax.swing.JFrame {
         txtUsername = new javax.swing.JTextField();
         txtPassword = new javax.swing.JTextField();
         btnRegister = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
 
         jLabel1.setText("GRAIL & RUIN");
 
@@ -77,6 +87,13 @@ public class Register extends javax.swing.JFrame {
             }
         });
 
+        btnBack.setText("Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -89,7 +106,8 @@ public class Register extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(jLabel6)
                     .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBack))
                 .addContainerGap(83, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -107,7 +125,9 @@ public class Register extends javax.swing.JFrame {
                 .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addComponent(btnRegister)
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnBack)
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         pack();
@@ -122,12 +142,18 @@ public class Register extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPasswordActionPerformed
 
     private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
-        if(!txtUsername.getText().isEmpty() && !txtPassword.getText().isEmpty()){
+        try{
+            
+            if(!txtUsername.getText().isEmpty() && !txtPassword.getText().isEmpty()){
             if(!acc.checkAcc(txtUsername.getText())){
                 acc.setUsername(txtUsername.getText());
                 acc.setPassword(txtPassword.getText());
                 
-                //Example
+                acc.Insert();
+                //Log-In Screen
+                login.setVisible(true);
+                this.setVisible(false);
+                
                 
             } else {
                 JOptionPane.showMessageDialog(this, "Username is already in out System.", "Error", JOptionPane.ERROR);
@@ -136,8 +162,16 @@ public class Register extends javax.swing.JFrame {
         } else {
            JOptionPane.showMessageDialog(this, "Please fill in the Credentials", "Warnign", JOptionPane.WARNING_MESSAGE);
         }
+        } catch (Exception e){
+            System.out.println("System Error: " + e);
+        }
         
     }//GEN-LAST:event_btnRegisterActionPerformed
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        this.setVisible(false);
+        new Login().setVisible(true);
+    }//GEN-LAST:event_btnBackActionPerformed
 
     /**
      * @param args the command line arguments
@@ -170,11 +204,13 @@ public class Register extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Register().setVisible(true);
+                
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnRegister;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;

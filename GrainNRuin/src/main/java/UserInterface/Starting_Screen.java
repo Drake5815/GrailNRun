@@ -4,6 +4,9 @@
  */
 package UserInterface;
 
+import Database.SaveState;
+import Manager.Database_Manager;
+
 /**
  *
  * @author Engilo Grave
@@ -11,12 +14,26 @@ package UserInterface;
 public class Starting_Screen extends javax.swing.JFrame {
 
     /**
+     *  In-Game Variables
+     */
+    private Database_Manager dbManager = new Database_Manager("Users");
+    
+    private String inGameName;
+    private SaveState ss01;
+    private SaveState ss02;
+    private SaveState ss03;
+    
+    /**
      * Creates new form Starting_Screen
      */
     public Starting_Screen() {
         initComponents();
     }
 
+    public Starting_Screen(String Username){
+        initComponents();
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

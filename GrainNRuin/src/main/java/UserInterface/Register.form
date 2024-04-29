@@ -61,6 +61,7 @@
                   <Component id="jLabel6" alignment="2" min="-2" max="-2" attributes="0"/>
                   <Component id="txtUsername" alignment="2" min="-2" pref="235" max="-2" attributes="0"/>
                   <Component id="txtPassword" alignment="2" min="-2" pref="235" max="-2" attributes="0"/>
+                  <Component id="btnBack" alignment="2" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="83" max="32767" attributes="0"/>
           </Group>
@@ -81,7 +82,9 @@
               <Component id="txtPassword" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               <Component id="btnRegister" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="52" max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="btnBack" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="12" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -115,6 +118,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegisterActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnBack">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Back"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBackActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
