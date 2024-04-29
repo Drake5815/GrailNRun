@@ -16,9 +16,9 @@ public class SaveState {
     private Level_Manager lvlManager = new Level_Manager();
     private UI_Controller controller = new UI_Controller();
     
-    public SaveState(){
-        
-    }
+    private String Username;
+    
+    public SaveState(){}
     public SaveState(Level_Manager lvlManager, UI_Controller controller){
         this.lvlManager = lvlManager;
         this.controller = controller;
@@ -29,6 +29,12 @@ public class SaveState {
     }
     public void setUIController(UI_Controller controller){
         this.controller = controller;
+    }
+    public void setUsername(String username){
+        this.Username = username;
+    }
+    public String getUsername(){
+        return this.Username;
     }
     public Level_Manager getLevelManager(){
         return this.lvlManager;
