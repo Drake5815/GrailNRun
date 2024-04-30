@@ -14,7 +14,7 @@ import org.bson.Document;
  */
 public class Account {
     
-    private Database_Manager DB_Manager = new Database_Manager("user");
+    private Database_Manager DB_Manager = new Database_Manager("Users");
     private SaveState saveState;
     
     private String username;

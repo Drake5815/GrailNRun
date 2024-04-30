@@ -11,26 +11,13 @@ import Manager.Database_Manager;
  *
  * @author Engilo Grave
  */
-public class Starting_Screen extends javax.swing.JFrame {
-
-    /**
-     *  In-Game Variables
-     */
-    private Database_Manager dbManager = new Database_Manager("Users");
-    
-    private String inGameName;
-    private SaveState ss01;
-    private SaveState ss02;
-    private SaveState ss03;
-    
+public class Game_Form extends javax.swing.JFrame {
     /**
      * Creates new form Starting_Screen
      */
-    public Starting_Screen() {
-        initComponents();
-    }
-
-    public Starting_Screen(String Username){
+    public Game_Form() {
+        this.setResizable(false);
+        this.setSize(640, 720);
         initComponents();
     }
     
@@ -44,6 +31,9 @@ public class Starting_Screen extends javax.swing.JFrame {
     private void initComponents() {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(800, 720));
+        setResizable(false);
+        setSize(new java.awt.Dimension(640, 360));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -76,20 +66,21 @@ public class Starting_Screen extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Starting_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Game_Form.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Starting_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Game_Form.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Starting_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Game_Form.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Starting_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Game_Form.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Starting_Screen().setVisible(true);
+                new Game_Form().setVisible(true);
             }
         });
     }

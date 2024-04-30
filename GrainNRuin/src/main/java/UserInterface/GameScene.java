@@ -8,12 +8,12 @@ package UserInterface;
  *
  * @author Engilo Grave
  */
-public class LoadingScreen extends javax.swing.JPanel {
+public class GameScene extends javax.swing.JPanel {
 
     /**
-     * Creates new form LoadingScreen
+     * Creates new form Level_Manager_UI
      */
-    public LoadingScreen() {
+    public GameScene() {
         this.setSize(640, 720);
         initComponents();
     }
@@ -27,17 +27,15 @@ public class LoadingScreen extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setPreferredSize(new java.awt.Dimension(640, 720));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 640, Short.MAX_VALUE)
+            .addGap(0, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 720, Short.MAX_VALUE)
+            .addGap(0, 300, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 

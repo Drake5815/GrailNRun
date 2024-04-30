@@ -20,6 +20,7 @@ public class Register extends javax.swing.JFrame {
      * Creates new form Register
      */
     public Register() {
+        this.setSize(400, 300);
         initComponents();
         btnInvis();
     }
