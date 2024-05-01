@@ -134,7 +134,7 @@ public class Login extends javax.swing.JFrame {
                 // Starting Screen
                 System.out.println("Start StartingScreen Loader...");
                 JOptionPane.showMessageDialog(this, "Successfully Logged-In!", "Success", JOptionPane.INFORMATION_MESSAGE);
-                new Game_Form().setVisible(true);
+                new GameFrame().setVisible(true);
                 this.setVisible(false);
                 
             } else {
