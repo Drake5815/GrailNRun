@@ -21,8 +21,7 @@ public class Cards {
     
     private String name;
     private int Strength=0, Intelligence=0, Agility=0;
-    
-    public Cards(){}
+
     public Cards(String name, int Strength, int Intelligence, int Agility){
         this.name = name;
         this.Strength = Strength;
