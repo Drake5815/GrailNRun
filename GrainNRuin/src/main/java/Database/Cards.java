@@ -30,7 +30,7 @@ public class Cards {
         this.Agility = Agility;
     }
     
-    public Relics(Document card){
+    public Cards(Document card){
         Document temp = card.get("Card", Document.class);
         this.name = temp.getString("name");
         this.Strength = temp.getInteger("Strength");
