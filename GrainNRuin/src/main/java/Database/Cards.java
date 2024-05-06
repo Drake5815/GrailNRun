@@ -7,6 +7,7 @@ package Database;
 import Manager.Database_Manager;
 import java.util.HashMap;
 import javax.swing.ImageIcon;
+import org.bson.Document;
 
 /**
  *
@@ -27,6 +28,14 @@ public class Cards {
         this.Strength = Strength;
         this.Intelligence = Intelligence;
         this.Agility = Agility;
+    }
+    
+    public Relics(Document card){
+        Document temp = card.get("Card", Document.class);
+        this.name = temp.getString("name");
+        this.Strength = temp.getInteger("Strength");
+        this.Intelligence = temp.getInteger("Intelligence");
+        this.Agility = temp.getInteger("Agility");
     }
     
     public void addCard(){

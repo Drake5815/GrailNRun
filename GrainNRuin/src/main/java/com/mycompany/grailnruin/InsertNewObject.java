@@ -24,6 +24,12 @@ public class InsertNewObject {
          * 
          * Insert 40 new cards
          */
+        
+        //Loop to insert 40 cards 
+        for(int i = 0; i < 40; i++){
+                crdManager.insertNewCard();
+        }
+        
         rlcManager.insertNewRelic();
     }
     
