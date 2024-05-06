@@ -6,6 +6,7 @@ package UserInterface;
 
 import Database.Account;
 import java.awt.Color;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -22,9 +23,11 @@ public class Register extends javax.swing.JFrame {
     public Register() {
         this.setSize(400, 300);
         initComponents();
-        btnInvis();
+        Inserts();
     }
-    private void btnInvis(){
+    private void Inserts(){
+        this.setIconImage(new ImageIcon(this.getClass().getResource("/images/logo.png")).getImage());
+        
         btnBack.setOpaque(false);
         btnBack.setContentAreaFilled(false);
         btnBack.setBorderPainted(false);
@@ -69,7 +72,7 @@ public class Register extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel4.setText("GRAIL & RUIN");
+        jLabel4.setText("Grail N' Ruin");
 
         jLabel5.setText("USERNAME:");
 

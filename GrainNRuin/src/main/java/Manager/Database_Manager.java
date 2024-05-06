@@ -98,6 +98,10 @@ public class Database_Manager {
         Document update = new Document("$set", new Document(setKey, changeValueTo));
         collection.updateOne(query, update);
     }
+    public void updateDocument(Document doc, String setKey, Object changeValueTo){
+        Document update = new Document("$set", new Document(setKey, changeValueTo));
+        collection.updateOne(doc,update);
+    }
     // Print Document ... NEEDS MORE TESTING
     public Document getDocument(String key, Object value){
         Document query = new Document(key, value);
@@ -110,6 +114,19 @@ public class Database_Manager {
         }
         cursor.close();
         return found;
+    }
+    
+    public ArrayList getListDocument(String key, Object value){
+        ArrayList<Document> results = new ArrayList<>();
+        Document query = new Document(key, value);
+        
+        try(MongoCursor<Document> cursor = collection.find(query).iterator()){
+            while(cursor.hasNext()){
+                results.add(cursor.next());
+            }
+        }
+        
+        return results;
     }
     
     public void printDocument(String key, Object value){
@@ -136,6 +153,10 @@ public class Database_Manager {
         return false;
     }
     
+    public int getCount(){
+        return Math.toIntExact(collection.countDocuments());
+    }
+    
     //Testing Purposes Only
     public static void main(String[] args){
         try{
@@ -144,14 +165,17 @@ public class Database_Manager {
             MongoCollection loacalCol = localDatabase.getCollection("test");
 
             Document docs1 = new Document("name", "Grave");
+            docs1.append("Status", "active");
             docs1.append("Sex", "Male");
             docs1.append("Age", "34");
 
             Document docs2 = new Document("name", "Yap");
+            docs2.append("Status", "active");
             docs2.append("Sex", "Male");
             docs2.append("Age", "10");
 
             Document docs3 = new Document("name", "Pata");
+            docs3.append("Status", "active");
             docs3.append("Sex", "Male");
             docs3.append("Age", "100");
 
@@ -182,16 +206,19 @@ public class Database_Manager {
             loacalCol.insertOne(doc5);
             System.out.println("Inserted HashMap");
             
-            Document query = new Document("name", "Yap");
+            Document query = new Document("Status", "active");
             MongoCursor<Document> cursor = loacalCol.find(query).iterator();
 
             while(cursor.hasNext()){
                 Document result = cursor.next();
                 String name = result.getString("name");
-                System.out.print("Name: " + name);
+                System.out.println("Name: " + name);
             }
             
             cursor.close();
+            
+            System.out.println(Math.toIntExact(loacalCol.countDocuments()));
+            
             
         }catch (Exception e){
             System.out.println("System Error :" + e);

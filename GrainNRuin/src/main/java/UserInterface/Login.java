@@ -28,7 +28,7 @@ public class Login extends javax.swing.JFrame {
     
     private void inserts(){
             this.setSize(400, 300);
-        
+            this.setIconImage(new ImageIcon(this.getClass().getResource("/images/logo.png")).getImage());
             btnRegister.setOpaque(false);
             btnRegister.setContentAreaFilled(false);
             btnRegister.setBorderPainted(false);
@@ -57,7 +57,7 @@ public class Login extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(400, 300));
         setResizable(false);
 
-        jLabel1.setText("GRAIL & RUIN");
+        jLabel1.setText("Grail N' Ruin");
 
         jLabel2.setText("USERNAME:");
 
@@ -134,7 +134,7 @@ public class Login extends javax.swing.JFrame {
                 // Starting Screen
                 System.out.println("Start StartingScreen Loader...");
                 JOptionPane.showMessageDialog(this, "Successfully Logged-In!", "Success", JOptionPane.INFORMATION_MESSAGE);
-                new GameFrame().setVisible(true);
+                
                 this.setVisible(false);
                 
             } else {
