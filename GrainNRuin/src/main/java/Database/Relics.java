@@ -15,7 +15,7 @@ import org.bson.Document;
  * @author Engilo Grave
  */
 public class Relics {
-    private ImageIcon img;
+    private String img = "G:\\GithubDesktop\\GIT_FinalProj\\GrailNRun\\GrainNRuin\\src\\main\\resources\\images\\" + this.name;
     
     private String name;
     private int Strength=0, Intelligence=0, Agility=0;
@@ -23,14 +23,14 @@ public class Relics {
     private Database_Manager dbManager = new Database_Manager("Relics");
     
     public Relics(){}
-    public Relics(String name, int Strength, int Intelligence, int Agility){
+    public Relics(String name, int Strength, int Intelligence, int Agility, String img){
         this.name = name;
         this.Strength = Strength;
         this.Intelligence = Intelligence;
         this.Agility = Agility;
     }
     
-    public ImageIcon getIcon(){
+    public String getIcon(){
         return this.img;
     }
     public int getStrength(){
