@@ -1,3 +1,4 @@
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -28,6 +29,20 @@ public class Relics {
         this.Intelligence = Intelligence;
         this.Agility = Agility;
     }
+    
+    public ImageIcon getIcon(){
+        return this.img;
+    }
+    public int getStrength(){
+        return this.Strength;
+    }
+    public int getIntelligence(){
+        return this.Intelligence;
+    }
+    public int getAgility(){
+        return this.Agility;
+    }
+    
     public Relics(Document relic){
         Document temp = relic.get("Relic", Document.class);
         this.name = temp.getString("name");
@@ -41,5 +56,10 @@ public class Relics {
         dbManager.setAppendSingle("Relic", this);
         
         dbManager.Insert();
+    }
+    public void getImg(String name){
+        switch(name){
+            default -> System.out.print("No instance image of that certain relic");
+        }
     }
 }

@@ -64,11 +64,6 @@ public class Avatar implements Stats{
         }
     }
     
-    
-    public void setJCharacter(JLabel JCharacter){
-        this.JCharacter = JCharacter;
-    }
-    
     @Override
     public float getHealth() {
         return this.Health;

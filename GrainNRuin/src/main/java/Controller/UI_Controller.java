@@ -5,8 +5,10 @@
 package Controller;
 
 import Database.Avatar;
+import Database.Relics;
 import Manager.Deck_Manager;
 import Manager.Item_Manager;
+import java.util.ArrayList;
 import javax.swing.JLabel;
 
 /**
@@ -30,6 +32,9 @@ public class UI_Controller {
     //Instance of new .this ... 
     public UI_Controller(){}
     
+    public Avatar getCharacter(){
+        return this.Character;
+    }
     /**
      * Operations in organized format
      *  - Set JLabel onScreen
@@ -40,26 +45,21 @@ public class UI_Controller {
      * 
      */
     
-    public void setJLabel(JLabel character){
-        Character.setJCharacter(character);
-    }
-    
-    private void Draw(){
+    public void Draw(){
         
     }
-    private void StartGame(){
+    public void StartGame(){
         
     }
-    private void onAttack(){
+    // onAttack updates the Character and do the Animation for the Character
+    public void onAttack(){
         
     }
-    private void newBuff(){
-
+    // When Recieving the Relic this makes the update to change to Character
+    public void updateRelicToAvatarChanges(Relics rels){
+        ArrayList<Integer> updateStats = Relics.Apply(rels);
+        this.Character.setStrength(this.Character.getStrength()+updateStats.get(0));
+        this.Character.setIntelligence(this.Character.getIntelligence()+updateStats.get(1));
+        this.Character.setAgility(this.Character.getAgility()+updateStats.get(2));
     }
-    private void newDebuff(){
-
-    }
-    
-    
-    
 }

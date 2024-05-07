@@ -20,8 +20,14 @@ public class Item_Manager {
     public Item_Manager(){
         
     }
-    public void insertRelic(Relics relics){
-        this.relic.add(relics);
+    public ArrayList<Integer> Apply(Relics rel){
+        this.relic.add(rel);
+        
+        ArrayList<Integer> stats = new ArrayList<>();
+        stats.add(rel.getStrength());
+        stats.add( rel.getIntelligence());
+        stats.add( rel.getAgility());
+        
+        return stats;
     }
-    
 }

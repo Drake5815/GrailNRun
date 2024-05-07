@@ -8,6 +8,8 @@ import Database.Relics;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import org.bson.Document;
 import org.bson.types.ObjectId;
 
@@ -55,10 +57,6 @@ public class Relic_Manager {
         
         Relics temp = new Relics(name,Str,Int,Agi);
         temp.addRelic();
-    }
-    
-    public void DislpayRelic(){
-    
     }
     
 }
