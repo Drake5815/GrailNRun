@@ -30,4 +30,11 @@ public class Item_Manager {
         
         return stats;
     }
+<<<<<<< HEAD
+=======
+    public void insertCard(Cards cards){
+        this.card.add(cards);
+    }
+    
+>>>>>>> 492f61da169ad28a619f86e57de971a65712076f
 }
