@@ -23,9 +23,17 @@ public class GameFrame extends javax.swing.JFrame {
         this.setIconImage(new ImageIcon(this.getClass().getResource("/images/logo.png")).getImage());
         this.setTitle("Grail N' Ruin");
         
-        InsertPanel(new LoadingPanel());
+        initComponents();
+    }
+    public GameFrame(JPanel gamePanel) {
+        this.setResizable(false);
+        
+        this.setIconImage(new ImageIcon(this.getClass().getResource("/images/logo.png")).getImage());
+        this.setTitle("Grail N' Ruin");
         
         initComponents();
+        
+        InsertPanel(gamePanel);
     }
     
     public void InsertPanel(JPanel gamePanel){

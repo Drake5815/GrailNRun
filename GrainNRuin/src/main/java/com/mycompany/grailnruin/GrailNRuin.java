@@ -4,12 +4,12 @@
 
 package com.mycompany.grailnruin;
 
-import UserInterface.Login;
+import UserInterface.StartingFrame;
 
 public class GrailNRuin {
   
     public static void main(String[] args){
-        new Login().setVisible(true);
+        new StartingFrame().setVisible(true);
 
     }
 }

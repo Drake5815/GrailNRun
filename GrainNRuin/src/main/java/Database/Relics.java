@@ -53,7 +53,12 @@ public class Relics {
     
     public void addRelic(){
         dbManager.setAppendSingle("Status", "inactive");
-        dbManager.setAppendSingle("Relic", this);
+        Document Relic = new Document()
+                .append("name", this.name)
+                .append("Strength", this.Strength)
+                .append("Intelligence", this.Intelligence)
+                .append("Agility", this.Agility);
+        dbManager.setAppendSingle("Relic", Relic);
         
         dbManager.Insert();
     }

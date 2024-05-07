@@ -4,6 +4,7 @@
  */
 package Manager;
 
+import Database.Relics;
 import com.mongodb.BasicDBObject;
 import com.mongodb.Block;
 import com.mongodb.DBCursor;
@@ -21,6 +22,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 import org.bson.Document;
 import org.bson.conversions.Bson;
 /**
@@ -160,65 +162,27 @@ public class Database_Manager {
     //Testing Purposes Only
     public static void main(String[] args){
         try{
-            MongoClient localClient = new MongoClient("localhost", 27017);
-            MongoDatabase localDatabase = localClient.getDatabase("GrailNRuin");
-            MongoCollection loacalCol = localDatabase.getCollection("test");
-
-            Document docs1 = new Document("name", "Grave");
-            docs1.append("Status", "active");
-            docs1.append("Sex", "Male");
-            docs1.append("Age", "34");
-
-            Document docs2 = new Document("name", "Yap");
-            docs2.append("Status", "active");
-            docs2.append("Sex", "Male");
-            docs2.append("Age", "10");
-
-            Document docs3 = new Document("name", "Pata");
-            docs3.append("Status", "active");
-            docs3.append("Sex", "Male");
-            docs3.append("Age", "100");
-
-            ArrayList<Document> arrayDocs = new ArrayList<>();
-            arrayDocs.add(docs1);
-            arrayDocs.add(docs2);
-            arrayDocs.add(docs3);
+            Database_Manager dbManager = new Database_Manager("Relics");
             
-            loacalCol.insertMany(arrayDocs);
+            HashMap<String, Object> stats = new HashMap<>();
             
-            System.out.println("Initialized");
+            Scanner sc = new Scanner(System.in);
             
-            HashMap<String, Object> obj = new HashMap<>();
-            HashMap<String, Integer> Stats = new HashMap<>();
-            obj.put("name", "Grave");
-            Stats.put("Strength", 10);
-            Stats.put("Magic", 10);
-            Stats.put("Agility", 10);
+            String name = sc.nextLine();
+            int Str = sc.nextInt();
+            int Int = sc.nextInt();
+            int Agi = sc.nextInt();
             
-            Document doc4 = new Document();
-            for(Map.Entry<String, Integer> entry : Stats.entrySet()){
-                doc4.put(entry.getKey(), entry.getValue());
-            }
+            Document Relic = new Document()
+                    .append("name", name)
+                    .append("Strength", Str)
+                    .append("Intelligence", Int)
+                    .append("Agility", Agi);
             
-            Document doc5 = new Document("name", "Grave")
-                    .append("Stats", doc4);
+            dbManager.setAppendSingle("Status", "inactive");
+            dbManager.setAppendSingle("Relics", Relic);
             
-            loacalCol.insertOne(doc5);
-            System.out.println("Inserted HashMap");
-            
-            Document query = new Document("Status", "active");
-            MongoCursor<Document> cursor = loacalCol.find(query).iterator();
-
-            while(cursor.hasNext()){
-                Document result = cursor.next();
-                String name = result.getString("name");
-                System.out.println("Name: " + name);
-            }
-            
-            cursor.close();
-            
-            System.out.println(Math.toIntExact(loacalCol.countDocuments()));
-            
+            dbManager.Insert();
             
         }catch (Exception e){
             System.out.println("System Error :" + e);

@@ -7,7 +7,10 @@ package com.mycompany.grailnruin;
 import Database.Cards;
 import Database.Relics;
 import Manager.Card_Manager;
+import Manager.Database_Manager;
+import Manager.Deck_Manager;
 import Manager.Relic_Manager;
+import org.bson.Document;
 
 /**
  *
@@ -16,17 +19,8 @@ import Manager.Relic_Manager;
 public class InsertNewObject {
     
     public static void main(String[] args){
-        Relic_Manager rlcManager = new Relic_Manager();
-        Card_Manager crdManager = new Card_Manager();
-
-        /**
-         * Insert 12 new Relics
-         *
-         * Insert 40 new cards
-         */
-        //Loop to insert 12 new Relics
-        for(int = 0; i < 12; i++){
-            rlcManager.insertNewRelic();
-        }
+        Deck_Manager deckMng = new Deck_Manager();
+        
+        deckMng.displayDeck();
     }
 }

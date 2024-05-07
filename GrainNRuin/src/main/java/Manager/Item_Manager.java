@@ -4,6 +4,7 @@
  */
 package Manager;
 
+import Database.Cards;
 import Database.Relics;
 import java.util.ArrayList;
 import org.bson.Document;
@@ -20,21 +21,11 @@ public class Item_Manager {
     public Item_Manager(){
         
     }
-    public ArrayList<Integer> Apply(Relics rel){
+    public ArrayList Insert(Relics rel){
         this.relic.add(rel);
-        
-        ArrayList<Integer> stats = new ArrayList<>();
-        stats.add(rel.getStrength());
-        stats.add( rel.getIntelligence());
-        stats.add( rel.getAgility());
-        
-        return stats;
+        return this.relic;
     }
-<<<<<<< HEAD
-=======
-    public void insertCard(Cards cards){
-        this.card.add(cards);
+    public ArrayList getRelic(){
+        return this.relic;
     }
-    
->>>>>>> 492f61da169ad28a619f86e57de971a65712076f
 }

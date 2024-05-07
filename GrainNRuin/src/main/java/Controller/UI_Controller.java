@@ -31,7 +31,6 @@ public class UI_Controller {
     
     //Instance of new .this ... 
     public UI_Controller(){}
-    
     public Avatar getCharacter(){
         return this.Character;
     }
@@ -45,19 +44,9 @@ public class UI_Controller {
      * 
      */
     
-    public void Draw(){
-        
-    }
-    public void StartGame(){
-        
-    }
-    // onAttack updates the Character and do the Animation for the Character
-    public void onAttack(){
-        
-    }
     // When Recieving the Relic this makes the update to change to Character
     public void updateRelicToAvatarChanges(Relics rels){
-        ArrayList<Integer> updateStats = Relics.Apply(rels);
+        ArrayList<Integer> updateStats = Relics.Insert(rels);
         this.Character.setStrength(this.Character.getStrength()+updateStats.get(0));
         this.Character.setIntelligence(this.Character.getIntelligence()+updateStats.get(1));
         this.Character.setAgility(this.Character.getAgility()+updateStats.get(2));

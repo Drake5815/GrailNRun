@@ -49,11 +49,11 @@ public class Relic_Manager {
         System.out.println("Enter name:");
         name = sc.nextLine();
         System.out.println("Enter Strength:");
-        Str = sc.nextInt(); sc.next();
+        Str = sc.nextInt();
         System.out.println("Enter Intelligence:");
-        Int = sc.nextInt(); sc.next();
+        Int = sc.nextInt();
         System.out.println("Enter Agility:");
-        Agi = sc.nextInt(); sc.next();
+        Agi = sc.nextInt();
         
         Relics temp = new Relics(name,Str,Int,Agi);
         temp.addRelic();
