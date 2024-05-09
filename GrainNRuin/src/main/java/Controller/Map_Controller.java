@@ -4,6 +4,7 @@
  */
 package Controller;
 
+import UserInterface.Map1;
 import javax.swing.JFrame;
 
 /**

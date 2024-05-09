@@ -79,7 +79,7 @@ public class LoadingPanel extends JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         GameFrame parentFrame = (GameFrame) SwingUtilities.getWindowAncestor(this);
-//        parentFrame.changePanel(new FightingScene());
+        parentFrame.changePanel(new Map1());
         System.out.println("Changing");
     }//GEN-LAST:event_jButton1ActionPerformed
 
