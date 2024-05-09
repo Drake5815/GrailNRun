@@ -14,6 +14,8 @@ import javax.swing.JPanel;
  */
 public class GameFrame extends javax.swing.JFrame {
 
+    private JPanel currPanel = new JPanel();
+    private LoadingPanel LP = new LoadingPanel();
     /**
      * Creates new form GameFrame
      */
@@ -37,6 +39,14 @@ public class GameFrame extends javax.swing.JFrame {
     }
     
     public void InsertPanel(JPanel gamePanel){
+        if (this.currPanel != null){
+            this.remove(this.currPanel);
+        }
+        if (gamePanel == LP){
+            gamePanel = new LoadingPanel().endAnimation();
+        }
+        
+        this.currPanel = gamePanel;
         this.add(gamePanel);
     }
     

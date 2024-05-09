@@ -6,17 +6,21 @@ package UserInterface;
 
 import java.awt.Dimension;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.Timer;
 
 /**
  *
  * @author Engilo Grave
  */
-public class LoadingPanel extends javax.swing.JPanel {
+public class LoadingPanel extends JPanel {
     private ImageIcon[] iconArr = new ImageIcon[4];
-    private Timer animationTimer;
+    private Timer animationTimer,timer;
+    private GameFrame game = new GameFrame();
     private int currImageIndex=0;
     /**
      * Creates new form LoadingPanel
@@ -24,10 +28,6 @@ public class LoadingPanel extends javax.swing.JPanel {
     public LoadingPanel() {
         this.setSize( new Dimension(640,360));
         startAnimation();
-    }
-
-    private void Insert(){
-        jAnimation.setIcon(new ImageIcon("G:\\GithubDesktop\\GIT_FinalProj\\GrailNRun\\GrainNRuin\\src\\main\\resources\\images\\Loading01.png"));
     }
     
     private void startAnimation(){
@@ -45,7 +45,12 @@ public class LoadingPanel extends javax.swing.JPanel {
         });
         animationTimer.start();
     }
-    
+    public void endAnimation(){
+        game.remove(this);
+        timer = new Timer(2000,(e)->{
+           animationTimer.stop();
+        });
+    }
     /**
      *  
      * This method is called from within the constructor to initialize the form.
@@ -57,29 +62,20 @@ public class LoadingPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jAnimation = new javax.swing.JLabel();
+        jBackground = new javax.swing.JLabel();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jAnimation.setAlignmentY(0.0F);
+        add(jAnimation, new org.netbeans.lib.awtextra.AbsoluteConstraints(272, 97, 95, 125));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(272, 272, 272)
-                .addComponent(jAnimation, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(273, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(97, 97, 97)
-                .addComponent(jAnimation, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(98, Short.MAX_VALUE))
-        );
+        jBackground.setIcon(new javax.swing.ImageIcon("G:\\GithubDesktop\\GIT_FinalProj\\GrailNRun\\GrainNRuin\\src\\main\\resources\\images\\Loading05.png")); // NOI18N
+        add(jBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 320));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jAnimation;
+    private javax.swing.JLabel jBackground;
     // End of variables declaration//GEN-END:variables
 }

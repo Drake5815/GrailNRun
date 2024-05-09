@@ -17,7 +17,7 @@ import org.bson.Document;
 public class Cards {
     private Database_Manager dbManager = new Database_Manager("Cards");
     
-    private ImageIcon img;
+    private String img = "G:\\GithubDesktop\\GIT_FinalProj\\GrailNRun\\GrainNRuin\\src\\main\\resources\\images\\cards\\" + this.name;
     
     private String name;
     private double Health=0, Damage=0, ManaConsumption=0, Shield=0;

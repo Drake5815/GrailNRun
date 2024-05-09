@@ -4,20 +4,27 @@
  */
 package UserInterface;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author Engilo Grave
  */
-public class StartingScreen extends javax.swing.JPanel {
+public class Fighting extends javax.swing.JPanel {
 
     /**
-     * Creates new form StartingScreen
+     * Creates new form Fighting
      */
-    public StartingScreen() {
-        this.setSize(640, 720);
+    public Fighting() {
         initComponents();
     }
 
+    private void CardImages(){
+        ImageIcon img = new ImageIcon("G:\\GithubDesktop\\GIT_FinalProj\\GrailNRun\\GrainNRuin\\src\\main\\resources\\images\\Loading01.png");
+        this.jCard01.setIcon(img);
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,19 +34,31 @@ public class StartingScreen extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jCard01 = new javax.swing.JLabel();
+
+        jCard01.setIcon(new javax.swing.ImageIcon("G:\\GithubDesktop\\GIT_FinalProj\\GrailNRun\\GrainNRuin\\src\\main\\resources\\images\\cards\\Cataclysm.png")); // NOI18N
+        jCard01.setText("Something pleas Insert new GamePanel");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jCard01, javax.swing.GroupLayout.DEFAULT_SIZE, 628, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jCard01, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jCard01;
     // End of variables declaration//GEN-END:variables
 }
