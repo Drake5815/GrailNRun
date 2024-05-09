@@ -15,7 +15,7 @@ public class Map_Controller extends Map1{
     public static void main(String[] args) {
             JFrame frame = new JFrame("Map Example");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setSize(640, 369);
+            frame.setSize(640, 360);
 
             Map1 mapPanel = new Map1();        
             frame.add(mapPanel);
