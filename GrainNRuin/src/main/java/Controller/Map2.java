@@ -4,6 +4,19 @@
  */
 package Controller;
 
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.GridLayout;
+import java.awt.Image;
+import java.awt.Point;
+import java.awt.Rectangle;
+import java.net.URL;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
 /**
  *
  * @author acer
@@ -13,9 +26,106 @@ public class Map2 extends javax.swing.JPanel {
     /**
      * Creates new form Map2
      */
+    
+    private Image backgroundImage;
+    
     public Map2() {
         initComponents();
+        initBG();
+        
+        
+//        setLabelToAll();
     }
+    
+    public static void main(String[] args) {
+            JFrame frame = new JFrame("Map Example");
+            frame.setSize(300, 200);
+
+            JPanel panel = new JPanel(new GridLayout(10, 5)); // 2 rows, 2 columns
+
+            // Create buttons and add them to the panel
+            JButton button1 = new JButton("Button 1");
+            JButton button2 = new JButton("Button 2");
+            JButton button3 = new JButton("Button 3");
+            JButton button4 = new JButton("Button 4");
+
+            panel.add(button1);
+            panel.add(button2);
+            panel.add(button3);
+            panel.add(button4);
+
+        frame.add(panel);
+        frame.setVisible(true);
+    }
+    
+    public void initBG(){
+        try {
+            URL imageURL = getClass().getResource("/images/background.png");
+            if (imageURL != null) {
+                System.out.println("Image loaded successfully: " + imageURL.toString());
+                backgroundImage = new ImageIcon(imageURL).getImage();
+            } else {
+                System.err.println("Image not found in resources.");
+            }
+        } catch (Exception e) {
+            System.err.println("Error loading background image: " + e.getMessage());
+        }
+    }
+    
+//    public void setLabelToAll(){
+//        setLabelBounds(startPoint1);
+//        setLabelBounds(restp2);
+//        setLabelBounds(restp1);
+//        setLabelBounds(restM1);
+//        setLabelBounds(fightp9);
+//        setLabelBounds(fightp8);
+//        setLabelBounds(fightp7);
+//        setLabelBounds(fightp6);
+//        setLabelBounds(fightp5);
+//        setLabelBounds(fightp4);
+//        setLabelBounds(fightp3);
+//        setLabelBounds(fightp2);
+//        setLabelBounds(fightp1);
+//        setLabelBounds(Rare_Occ3);
+//        setLabelBounds(Rare_Occ2);
+//        setLabelBounds(Rare_Occ1);
+//        setLabelBounds(Finale);
+//        setLabelBounds(FIght_MidBoss);
+//    }
+    
+    private void setLabelBounds(JButton button) {
+        JLabel label = new JLabel();
+        label.setBounds(button.getBounds());
+        add(label);
+        setComponentZOrder(label, 1);
+    }
+    
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        try {
+            if (backgroundImage != null) {
+                g.drawImage(backgroundImage, 0, 0, getWidth(), getHeight(), this);
+            } else {
+                g.setColor(Color.RED);
+                g.fillRect(0, 0, getWidth(), getHeight());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+        
+        public void setOccIcon(JButton btn){
+            btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/OccurenceEvent.png")));
+        }
+    
+        public void setBattleIcon(JButton btn){
+            btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/enemy.gif")));
+        }
+        
+        public void setRestIcon(JButton btn){
+            btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/rest.gif")));
+        }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -26,132 +136,19 @@ public class Map2 extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        canvas1 = new java.awt.Canvas();
-
-        jButton1.setText("jButton1");
-
-        jButton2.setText("jButton2");
-
-        jButton3.setText("jButton3");
-
-        jButton4.setText("jButton4");
-
-        jButton5.setText("jButton5");
-
-        jButton6.setText("jButton6");
-
-        jButton7.setText("jButton7");
-
-        jButton8.setText("jButton8");
-
-        jButton9.setText("jButton9");
-
-        jButton10.setText("jButton10");
-
-        jButton11.setText("jButton11");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(86, 86, 86)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton4)
-                            .addComponent(jButton2)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton3)
-                            .addComponent(jButton1))))
-                .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton5)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(canvas1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(98, 98, 98)
-                        .addComponent(jButton10))
-                    .addComponent(jButton6))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(313, 313, 313)
-                .addComponent(jButton8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton11)
-                .addGap(58, 58, 58))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(222, 222, 222)
-                .addComponent(jButton7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
-                .addComponent(jButton9)
-                .addGap(196, 196, 196))
+            .addGap(0, 640, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton2)
-                        .addGap(28, 28, 28)
-                        .addComponent(jButton3)
-                        .addGap(18, 39, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton6)
-                            .addComponent(jButton5))
-                        .addGap(39, 39, 39)
-                        .addComponent(jButton8)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton9)
-                            .addComponent(jButton7))
-                        .addGap(116, 116, 116))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(canvas1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(159, 159, 159)
-                .addComponent(jButton10)
-                .addGap(18, 18, 18)
-                .addComponent(jButton4)
-                .addGap(1, 1, 1)
-                .addComponent(jButton11)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGap(0, 432, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.awt.Canvas canvas1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     // End of variables declaration//GEN-END:variables
 }
