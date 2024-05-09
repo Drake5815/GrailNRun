@@ -21,11 +21,17 @@ public class Item_Manager {
     public Item_Manager(){
         
     }
-    public ArrayList Insert(Relics rel){
-        this.relic.add(rel);
-        return this.relic;
+    public void Insert(Relics rel){
+        if(!checkSize()){
+            System.out.println("Full Backpack!!");
+        } else {
+            this.relic.add(rel);
+        }
     }
     public ArrayList getRelic(){
         return this.relic;
+    }
+    private boolean checkSize(){
+        return relic.size() < 3;
     }
 }

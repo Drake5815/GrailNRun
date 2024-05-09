@@ -118,4 +118,22 @@ public class Cards {
     public String getName(){
         return this.name;
     }
+    public int getSterngth(){
+        return this.Strength;
+    }
+    public int getIntelligence(){
+        return this.Intelligence;
+    }
+    public int getAgility(){
+        return this.Agility;
+    }
+    public double getHealth(){
+        return this.Health;
+    }
+    public double getShield(){
+        return this.Shield;
+    }
+    public double getMana(){
+        return this.ManaConsumption;
+    }
 }

@@ -31,9 +31,12 @@ public class Deck_Manager {
             }
         }
     }
-    public ArrayList insertCard(Cards card){
-        this.Deck.add(card);
-        return this.Deck;
+    public void insertCard(Cards card){
+        if(Deck.size() < 20){
+            this.Deck.add(card);
+        } else {
+            System.out.println("Deck is Full");
+        }
     }
     public ArrayList getDeck(){
         return this.Deck;

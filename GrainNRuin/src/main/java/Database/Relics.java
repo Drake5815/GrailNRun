@@ -23,11 +23,18 @@ public class Relics {
     private Database_Manager dbManager = new Database_Manager("Relics");
     
     public Relics(){}
+    public Relics(String name, int Strength, int Intelligence, int Agility){
+        this.name = name;
+        this.Strength = Strength;
+        this.Intelligence = Intelligence;
+        this.Agility = Agility;
+    }
     public Relics(String name, int Strength, int Intelligence, int Agility, String img){
         this.name = name;
         this.Strength = Strength;
         this.Intelligence = Intelligence;
         this.Agility = Agility;
+        this.img = img;
     }
     
     public String getIcon(){
