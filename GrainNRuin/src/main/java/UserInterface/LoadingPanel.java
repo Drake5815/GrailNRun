@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 import javax.swing.Timer;
 
 /**
@@ -45,12 +46,6 @@ public class LoadingPanel extends JPanel {
         });
         animationTimer.start();
     }
-    public void endAnimation(){
-        game.remove(this);
-        timer = new Timer(2000,(e)->{
-           animationTimer.stop();
-        });
-    }
     /**
      *  
      * This method is called from within the constructor to initialize the form.
@@ -62,6 +57,7 @@ public class LoadingPanel extends JPanel {
     private void initComponents() {
 
         jAnimation = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jBackground = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -69,13 +65,28 @@ public class LoadingPanel extends JPanel {
         jAnimation.setAlignmentY(0.0F);
         add(jAnimation, new org.netbeans.lib.awtextra.AbsoluteConstraints(272, 97, 95, 125));
 
+        jButton1.setText("ChangeScene");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 280, -1, -1));
+
         jBackground.setIcon(new javax.swing.ImageIcon("G:\\GithubDesktop\\GIT_FinalProj\\GrailNRun\\GrainNRuin\\src\\main\\resources\\images\\Loading05.png")); // NOI18N
         add(jBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 320));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        GameFrame parentFrame = (GameFrame) SwingUtilities.getWindowAncestor(this);
+//        parentFrame.changePanel(new FightingScene());
+        System.out.println("Changing");
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jAnimation;
     private javax.swing.JLabel jBackground;
+    private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }

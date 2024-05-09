@@ -5,23 +5,21 @@
 package UserInterface;
 
 import java.awt.Dimension;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
+import javax.swing.Timer;
 
 /**
  *
  * @author Engilo Grave
  */
 public class GameFrame extends javax.swing.JFrame {
-
-    private JPanel currPanel = new JPanel();
-    private LoadingPanel LP = new LoadingPanel();
     /**
      * Creates new form GameFrame
      */
     public GameFrame() {
         this.setResizable(false);
-        
         this.setIconImage(new ImageIcon(this.getClass().getResource("/images/logo.png")).getImage());
         this.setTitle("Grail N' Ruin");
         
@@ -29,27 +27,21 @@ public class GameFrame extends javax.swing.JFrame {
     }
     public GameFrame(JPanel gamePanel) {
         this.setResizable(false);
-        
         this.setIconImage(new ImageIcon(this.getClass().getResource("/images/logo.png")).getImage());
         this.setTitle("Grail N' Ruin");
         
         initComponents();
-        
-        InsertPanel(gamePanel);
+        changePanel(gamePanel);
     }
-    
-    public void InsertPanel(JPanel gamePanel){
-        if (this.currPanel != null){
-            this.remove(this.currPanel);
+    public void changePanel(JPanel newPanel) {
+        if (currPanel != null) {
+            remove(currPanel);  // Remove the old panel
         }
-        if (gamePanel == LP){
-            gamePanel = new LoadingPanel().endAnimation();
-        }
-        
-        this.currPanel = gamePanel;
-        this.add(gamePanel);
+        currPanel = newPanel;  
+        add(currPanel); // Add and display the new panel
+        revalidate();          // Tell the frame to update layout
+        repaint();             // Force a redraw
     }
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -59,17 +51,30 @@ public class GameFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        currPanel = new javax.swing.JPanel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        javax.swing.GroupLayout currPanelLayout = new javax.swing.GroupLayout(currPanel);
+        currPanel.setLayout(currPanelLayout);
+        currPanelLayout.setHorizontalGroup(
+            currPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 640, Short.MAX_VALUE)
+        );
+        currPanelLayout.setVerticalGroup(
+            currPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 320, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 640, Short.MAX_VALUE)
+            .addComponent(currPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 320, Short.MAX_VALUE)
+            .addComponent(currPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -111,5 +116,6 @@ public class GameFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel currPanel;
     // End of variables declaration//GEN-END:variables
 }

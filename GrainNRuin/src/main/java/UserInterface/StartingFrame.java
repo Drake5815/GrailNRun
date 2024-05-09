@@ -4,6 +4,8 @@
  */
 package UserInterface;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author Engilo Grave
@@ -15,6 +17,7 @@ public class StartingFrame extends javax.swing.JFrame {
      */
     public StartingFrame() {
         initComponents();
+        this.setIconImage(new ImageIcon(getClass().getResource("/images/logo.png")).getImage());
         jButton1.setOpaque(false);
         jButton1.setContentAreaFilled(false);
         jButton1.setBorderPainted(false);
