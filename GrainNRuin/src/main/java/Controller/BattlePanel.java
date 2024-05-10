@@ -4,6 +4,12 @@
  */
 package Controller;
 
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.net.URL;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author Administrator
@@ -13,8 +19,8 @@ public class BattlePanel extends javax.swing.JPanel {
     /**
      * Creates new form BattlePanel
      */
+    private Image backgroundImage;
     
-    private 
     public BattlePanel() {
         initComponents();
         initBG();
