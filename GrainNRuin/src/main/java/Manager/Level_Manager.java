@@ -48,7 +48,9 @@ public class Level_Manager {
     }
     public void RestScene(){
         if (this.avatar.getCharaceter().getHealth() < 10){
-            this.avatar.getCharaceter().setHealth(10);
+            System.out.println("System Healing on progress");
+        } else {
+            System.out.println("Character already Max Health");
         }
     }
     public Relics getrndRelic(){

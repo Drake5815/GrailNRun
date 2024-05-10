@@ -4,21 +4,54 @@
  */
 package UserInterface;
 
+import Database.Cards;
+import Manager.Level_Manager;
+import java.awt.Dimension;
+import java.util.ArrayList;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
 
 /**
  *
  * @author Eron Asia
  */
 public class BattlePanel extends javax.swing.JPanel {
-
+    private GameFrame parent;
+    private Level_Manager lvlManager;
     /**
      * Creates new form BattlePanel
      */
     public BattlePanel() {
+        this.setSize(new Dimension(1280,720));
         initComponents();
     }
-
+    public BattlePanel(Level_Manager lvlManager){
+        this.setSize(new Dimension(1280,720));
+        this.lvlManager = lvlManager;
+        initComponents();
+        startGame();
+    }
+    private void startGame(){
+        ArrayList<Cards> onHand = new ArrayList<>();
+        onHand.add(this.lvlManager.getrndCards());
+        onHand.add(this.lvlManager.getrndCards());
+        onHand.add(this.lvlManager.getrndCards());
+        
+        ImageIcon card1 = new ImageIcon(onHand.get(0).getImg());
+        ImageIcon card2 = new ImageIcon(onHand.get(1).getImg());
+        ImageIcon card3 = new ImageIcon(onHand.get(2).getImg());
+        
+        btnCard1.setIcon(card1);
+        btnCard2.setIcon(card2);
+        btnCard3.setIcon(card3);
+    }
+    
+    
+    private void TurnOrder(){
+        
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -135,7 +168,7 @@ public class BattlePanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnSkipTurnActionPerformed
     public static void main(String[] args){
         JFrame frame = new JFrame();
-        frame.setSize(1240, 730);
+        frame.setSize(1280, 720);
         BattlePanel obj = new BattlePanel();
         frame.add(obj);
         frame.setVisible(true);

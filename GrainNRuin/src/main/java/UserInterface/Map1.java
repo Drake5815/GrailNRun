@@ -28,7 +28,7 @@ public class Map1 extends javax.swing.JPanel {
         private Image backgroundImage;
         private GameFrame parentFrame;
     public Map1() {
-        this.setSize(new Dimension(640,360));
+        this.setSize(new Dimension(1280,720));
         initComponents();
         initBG();
     } 
@@ -49,31 +49,16 @@ public class Map1 extends javax.swing.JPanel {
     }
     
     private void intoFight(){
-        GameFrame parent = (GameFrame) SwingUtilities.getWindowAncestor(this);
-        parent.changePanel(new JPanel());
+        parentFrame = (GameFrame) SwingUtilities.getWindowAncestor(this);
+        parentFrame.changePanel(new BattlePanel(parentFrame.getLvlManager()));
     }
     private void intoShop(){
-        GameFrame parent = (GameFrame) SwingUtilities.getWindowAncestor(this);
-        parent.changePanel(new ShopScene());
+        parentFrame = (GameFrame) SwingUtilities.getWindowAncestor(this);
+        parentFrame.changePanel(new ShopScene());
     }
     private void intoRest(){
-        GameFrame parent = (GameFrame) SwingUtilities.getWindowAncestor(this);
-        parent.setPanel(1);
-    }
-    
-     @Override
-    protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        try {
-            if (backgroundImage != null) {
-                g.drawImage(backgroundImage, 0, 0, getWidth(), getHeight(), this);
-            } else {
-                g.setColor(Color.RED);
-                g.fillRect(0, 0, getWidth(), getHeight());
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        parentFrame = (GameFrame) SwingUtilities.getWindowAncestor(this);
+        parentFrame.changePanel(new RestingScene(parentFrame.getLvlManager()));
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -83,14 +68,17 @@ public class Map1 extends javax.swing.JPanel {
      */
         public void setOccIcon(JButton btn){
             btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/OccurenceEvent.png")));
+            this.intoShop();
         }
     
         public void setBattleIcon(JButton btn){
             btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/enemy.gif")));
+            this.intoFight();
         }
         
         public void setRestIcon(JButton btn){
             btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/rest.gif")));
+            this.intoRest();
         }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -113,18 +101,22 @@ public class Map1 extends javax.swing.JPanel {
         restp2 = new javax.swing.JButton();
         Rare_Occ3 = new javax.swing.JButton();
         Finale = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         fightp9 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setAutoscrolls(true);
         setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
         setMaximumSize(new java.awt.Dimension(640, 365));
         setMinimumSize(new java.awt.Dimension(640, 365));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         startPoint1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Attack.png"))); // NOI18N
         startPoint1.setBorder(null);
         startPoint1.setBorderPainted(false);
         startPoint1.setContentAreaFilled(false);
+        add(startPoint1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
+        startPoint1.getAccessibleContext().setAccessibleDescription("");
 
         restM1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/UnknownP.png"))); // NOI18N
         restM1.setBorder(null);
@@ -138,6 +130,7 @@ public class Map1 extends javax.swing.JPanel {
                 restM1ActionPerformed(evt);
             }
         });
+        add(restM1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 35, 35));
 
         Rare_Occ2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/UnknownP.png"))); // NOI18N
         Rare_Occ2.setBorder(null);
@@ -151,6 +144,7 @@ public class Map1 extends javax.swing.JPanel {
                 Rare_Occ2ActionPerformed(evt);
             }
         });
+        add(Rare_Occ2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, 35, 35));
 
         fightp1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/UnknownP.png"))); // NOI18N
         fightp1.setBorder(null);
@@ -164,6 +158,7 @@ public class Map1 extends javax.swing.JPanel {
                 fightp1ActionPerformed(evt);
             }
         });
+        add(fightp1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, 35, 35));
 
         fightp2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/UnknownP.png"))); // NOI18N
         fightp2.setBorder(null);
@@ -177,6 +172,7 @@ public class Map1 extends javax.swing.JPanel {
                 fightp2ActionPerformed(evt);
             }
         });
+        add(fightp2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 90, 35, 35));
 
         FIght_MidBoss.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/UnknownP.png"))); // NOI18N
         FIght_MidBoss.setBorder(null);
@@ -190,6 +186,7 @@ public class Map1 extends javax.swing.JPanel {
                 FIght_MidBossActionPerformed(evt);
             }
         });
+        add(FIght_MidBoss, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 340, 35, 35));
 
         Rare_Occ1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/UnknownP.png"))); // NOI18N
         Rare_Occ1.setBorder(null);
@@ -203,6 +200,7 @@ public class Map1 extends javax.swing.JPanel {
                 Rare_Occ1ActionPerformed(evt);
             }
         });
+        add(Rare_Occ1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 120, 35, 35));
 
         fightp4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/UnknownP.png"))); // NOI18N
         fightp4.setBorder(null);
@@ -215,6 +213,7 @@ public class Map1 extends javax.swing.JPanel {
                 fightp4ActionPerformed(evt);
             }
         });
+        add(fightp4, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 300, 35, 35));
 
         fightp3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/UnknownP.png"))); // NOI18N
         fightp3.setBorder(null);
@@ -228,6 +227,7 @@ public class Map1 extends javax.swing.JPanel {
                 fightp3ActionPerformed(evt);
             }
         });
+        add(fightp3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 470, 35, 35));
 
         restp1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/UnknownP.png"))); // NOI18N
         restp1.setBorder(null);
@@ -241,6 +241,7 @@ public class Map1 extends javax.swing.JPanel {
                 restp1ActionPerformed(evt);
             }
         });
+        add(restp1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 380, 35, 35));
 
         fightp5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/UnknownP.png"))); // NOI18N
         fightp5.setBorder(null);
@@ -254,6 +255,7 @@ public class Map1 extends javax.swing.JPanel {
                 fightp5ActionPerformed(evt);
             }
         });
+        add(fightp5, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 550, 35, 35));
 
         fightp6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/UnknownP.png"))); // NOI18N
         fightp6.setBorder(null);
@@ -267,6 +269,7 @@ public class Map1 extends javax.swing.JPanel {
                 fightp6ActionPerformed(evt);
             }
         });
+        add(fightp6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 520, 35, 35));
 
         fightp8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/UnknownP.png"))); // NOI18N
         fightp8.setBorder(null);
@@ -277,6 +280,7 @@ public class Map1 extends javax.swing.JPanel {
                 fightp8ActionPerformed(evt);
             }
         });
+        add(fightp8, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 170, 35, 35));
 
         fightp7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/UnknownP.png"))); // NOI18N
         fightp7.setBorder(null);
@@ -290,6 +294,7 @@ public class Map1 extends javax.swing.JPanel {
                 fightp7ActionPerformed(evt);
             }
         });
+        add(fightp7, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 600, 35, 35));
 
         restp2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/UnknownP.png"))); // NOI18N
         restp2.setBorder(null);
@@ -303,6 +308,7 @@ public class Map1 extends javax.swing.JPanel {
                 restp2ActionPerformed(evt);
             }
         });
+        add(restp2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 250, 35, 35));
 
         Rare_Occ3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/UnknownP.png"))); // NOI18N
         Rare_Occ3.setBorder(null);
@@ -316,14 +322,13 @@ public class Map1 extends javax.swing.JPanel {
                 Rare_Occ3ActionPerformed(evt);
             }
         });
+        add(Rare_Occ3, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 510, 35, 35));
 
         Finale.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/boss.gif"))); // NOI18N
         Finale.setBorder(null);
         Finale.setBorderPainted(false);
         Finale.setContentAreaFilled(false);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/legend.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
+        add(Finale, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 70, 56, 56));
 
         fightp9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/UnknownP.png"))); // NOI18N
         fightp9.setBorder(null);
@@ -337,131 +342,14 @@ public class Map1 extends javax.swing.JPanel {
                 fightp9ActionPerformed(evt);
             }
         });
+        add(fightp9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 380, 35, 35));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(startPoint1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
-                        .addComponent(fightp1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(39, 39, 39)
-                                .addComponent(Rare_Occ2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(FIght_MidBoss, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(54, 54, 54))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(68, 68, 68)
-                                .addComponent(fightp2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(48, 48, 48)
-                                .addComponent(Rare_Occ1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(31, 31, 31)
-                                .addComponent(fightp8, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(fightp4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(107, 107, 107)
-                                .addComponent(restp2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(39, 39, 39))
-                            .addComponent(Finale, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(52, 52, 52))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(restM1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(69, 69, 69)
-                                .addComponent(fightp3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(fightp5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(70, 70, 70)))
-                        .addComponent(restp1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(41, 41, 41)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(fightp6, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(51, 51, 51)
-                                .addComponent(fightp9, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(43, 43, 43))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(Rare_Occ3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(75, 75, 75)
-                                .addComponent(fightp7, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(56, 56, 56))))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Finale, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(52, 52, 52)
-                                .addComponent(fightp8, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(fightp9, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(40, 40, 40)
-                                .addComponent(fightp7, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(84, 84, 84))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(restp2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(48, 48, 48)
-                                        .addComponent(fightp6, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(29, 29, 29)
-                                        .addComponent(Rare_Occ3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(FIght_MidBoss, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(41, 41, 41)
-                                        .addComponent(fightp5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(15, 15, 15)))
-                                .addGap(63, 63, 63))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(startPoint1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(2, 2, 2)
-                        .addComponent(restM1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(fightp1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(fightp2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(65, 65, 65)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(fightp4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Rare_Occ2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(52, 52, 52)
-                                .addComponent(restp1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(69, 69, 69)
-                                .addComponent(fightp3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(21, 21, 21))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addComponent(Rare_Occ1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon("G:\\GithubDesktop\\GIT_FinalProj\\GrailNRun\\GrainNRuin\\src\\main\\resources\\images\\legend (1).png")); // NOI18N
+        jLabel1.setText("jLabel1");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 210, 310));
 
-        startPoint1.getAccessibleContext().setAccessibleDescription("");
+        jLabel2.setIcon(new javax.swing.ImageIcon("G:\\GithubDesktop\\GIT_FinalProj\\GrailNRun\\GrainNRuin\\src\\main\\resources\\images\\background.png")); // NOI18N
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 740));
     }// </editor-fold>//GEN-END:initComponents
 
     private void fightp1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fightp1ActionPerformed
@@ -478,8 +366,6 @@ public class Map1 extends javax.swing.JPanel {
     private void restM1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restM1ActionPerformed
         // TODO add your handling code here:
         setRestIcon(restM1);
-        parentFrame = (GameFrame) SwingUtilities.getWindowAncestor(this);
-        parentFrame.changePanel(new RestingScene());
     }//GEN-LAST:event_restM1ActionPerformed
 
     private void fightp2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fightp2ActionPerformed
@@ -528,8 +414,6 @@ public class Map1 extends javax.swing.JPanel {
     private void restp1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restp1ActionPerformed
         // TODO add your handling code here:
         setRestIcon(restp1);
-        parentFrame = (GameFrame) SwingUtilities.getWindowAncestor(this);
-        parentFrame.changePanel(new RestingScene());
     }//GEN-LAST:event_restp1ActionPerformed
 
     private void fightp6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fightp6ActionPerformed
@@ -569,6 +453,7 @@ public class Map1 extends javax.swing.JPanel {
     private javax.swing.JButton fightp8;
     private javax.swing.JButton fightp9;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JButton restM1;
     private javax.swing.JButton restp1;
     private javax.swing.JButton restp2;

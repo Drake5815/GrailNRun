@@ -26,9 +26,8 @@ public class LoadingPanel extends JPanel {
      * Creates new form LoadingPanel
      */
     public LoadingPanel() {
-        this.setSize( new Dimension(640,360));
+        super.setSize(new Dimension(1280,720));
         startAnimation();
-        
     }
     
     private void startAnimation(){
@@ -45,16 +44,6 @@ public class LoadingPanel extends JPanel {
            currImageIndex = (currImageIndex + 1) % iconArr.length;
         });
         animationTimer.start();
-        endAnimation();
-    }
-    private void endAnimation(){
-        timer = new Timer(2000, (e)->{
-            GameFrame game = (GameFrame) SwingUtilities.getWindowAncestor(this);
-            animationTimer.stop();
-            game.setPanel(0);
-        });
-        timer.setRepeats(false);
-        timer.start();
     }
     /**
      *  
@@ -72,10 +61,10 @@ public class LoadingPanel extends JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jAnimation.setAlignmentY(0.0F);
-        add(jAnimation, new org.netbeans.lib.awtextra.AbsoluteConstraints(272, 97, 95, 125));
+        add(jAnimation, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 280, 95, 125));
 
         jBackground.setIcon(new javax.swing.ImageIcon("G:\\GithubDesktop\\GIT_FinalProj\\GrailNRun\\GrainNRuin\\src\\main\\resources\\images\\Loading05.png")); // NOI18N
-        add(jBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 320));
+        add(jBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
     }// </editor-fold>//GEN-END:initComponents
 
 

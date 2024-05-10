@@ -4,6 +4,7 @@
  */
 package UserInterface;
 
+import Manager.Level_Manager;
 import javax.swing.ImageIcon;
 
 /**
@@ -11,7 +12,7 @@ import javax.swing.ImageIcon;
  * @author Engilo Grave
  */
 public class StartingFrame extends javax.swing.JFrame {
-
+    private GameFrame Game;
     /**
      * Creates new form StartingFrame
      */
@@ -56,7 +57,7 @@ public class StartingFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.setVisible(false);
-        GameFrame Game = new GameFrame(new LoadingPanel());
+        Game = new GameFrame(new Map1());
         Game.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 

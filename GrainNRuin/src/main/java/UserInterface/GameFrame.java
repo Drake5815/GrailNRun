@@ -4,6 +4,7 @@
  */
 package UserInterface;
 
+import Manager.Level_Manager;
 import java.awt.Dimension;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
@@ -15,7 +16,8 @@ import javax.swing.Timer;
  * @author Engilo Grave
  */
 public class GameFrame extends javax.swing.JFrame {
-    private ArrayList<JPanel> panel = new ArrayList<>();
+    private Map1 panel = new Map1();
+    private Level_Manager lvlManager;
     /**
      * Creates new form GameFrame
      */
@@ -32,29 +34,37 @@ public class GameFrame extends javax.swing.JFrame {
         this.setTitle("Grail N' Ruin");
         
         initComponents();
-        Initialize();
-        changePanel(gamePanel);
+        this.Loader(gamePanel);
+    }
+    public void Loader(JPanel newPanel){
+        new Thread(()->{
+            this.changePanel(new LoadingPanel());
+            try{
+                this.lvlManager = new Level_Manager();
+            } catch(Exception e){
+                System.out.println("System error :" + e);
+            } finally{
+                this.changePanel(newPanel);
+            }
+        }).start();
     }
     public void changePanel(JPanel newPanel) {
         if (currPanel != null) {
             remove(currPanel);  // Remove the old panel
         }
-        if (newPanel instanceof ShopScene){
-            newPanel = new ShopScene();
+        if (newPanel instanceof Map1){
+            newPanel = this.panel;
         }
         currPanel = newPanel;  
         add(currPanel); // Add and display the new panel
         revalidate();          // Tell the frame to update layout
         repaint();             // Force a redraw
     }
-    private void Initialize(){
-        panel.add(new Map1());
-//        panel.add(new LoadingPanel());
-        panel.add(new RestingScene());
-//        panel.add(new ShopScene());
+    public Map1 getMap(){
+        return this.panel;
     }
-    public void setPanel(int index){
-        changePanel(panel.get(index));
+    public Level_Manager getLvlManager(){
+        return this.lvlManager;
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -73,11 +83,11 @@ public class GameFrame extends javax.swing.JFrame {
         currPanel.setLayout(currPanelLayout);
         currPanelLayout.setHorizontalGroup(
             currPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 640, Short.MAX_VALUE)
+            .addGap(0, 1280, Short.MAX_VALUE)
         );
         currPanelLayout.setVerticalGroup(
             currPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 320, Short.MAX_VALUE)
+            .addGap(0, 720, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

@@ -18,7 +18,8 @@ import org.bson.Document;
 public class Cards {
     private Database_Manager dbManager = new Database_Manager("Cards");
     
-    private URL img = getClass().getResource("/images/cards/" + this.name + ".png");
+    private String imagePath;
+    private ImageIcon icon;
     
     private String name;
     private double Health=0, Damage=0, ManaConsumption=0, Shield=0;
@@ -68,6 +69,7 @@ public class Cards {
             this.Strength = temp.getInteger("Strength");
             this.Intelligence = temp.getInteger("Intelligence");
             this.Agility = temp.getInteger("Agility");
+            this.imagePath = "/images/cards/" + temp.getString("Name") +".png";
     }
     
     public void addCardOnDmg(){
@@ -105,8 +107,16 @@ public class Cards {
         dbManager.setAppendSingle("Card", Cards);
         dbManager.Insert();
     }
-    public URL getImg(){
-        return this.img;
+    public ImageIcon getIcon(){
+        if(icon == null){
+            URL imgURL = getClass().getResource(imagePath);
+            if (imgURL != null) {
+                icon = new ImageIcon(imgURL); 
+            } else {
+                System.err.println("Image not found: " + imagePath);
+            }
+        }
+        return icon;
     }
     
     /**
