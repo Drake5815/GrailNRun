@@ -40,6 +40,8 @@ public class BattlePanel extends javax.swing.JPanel {
         btnCard1 = new javax.swing.JButton();
         lblEnemy = new javax.swing.JLabel();
         lblCharacter1 = new javax.swing.JLabel();
+        lblEnemyHealth = new javax.swing.JLabel();
+        lblHealthIcon1 = new javax.swing.JLabel();
         lblBackground = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(1240, 730));
@@ -64,7 +66,7 @@ public class BattlePanel extends javax.swing.JPanel {
 
         lblHealthIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Health.png"))); // NOI18N
         lblHealthIcon.setPreferredSize(new java.awt.Dimension(45, 45));
-        add(lblHealthIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, -1, 40));
+        add(lblHealthIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 470, -1, 40));
 
         lblShieldIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Shield.png"))); // NOI18N
         add(lblShieldIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, 50, 40));
@@ -78,7 +80,7 @@ public class BattlePanel extends javax.swing.JPanel {
                 btnSkipTurnActionPerformed(evt);
             }
         });
-        add(btnSkipTurn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 550, 130, 50));
+        add(btnSkipTurn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 650, 130, 50));
 
         btnCard2.setPreferredSize(new java.awt.Dimension(201, 256));
         btnCard2.addActionListener(new java.awt.event.ActionListener() {
@@ -106,14 +108,21 @@ public class BattlePanel extends javax.swing.JPanel {
 
         lblEnemy.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         lblEnemy.setForeground(new java.awt.Color(255, 255, 255));
-        lblEnemy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/enemies/BossEnemy.png"))); // NOI18N
         lblEnemy.setText("Enemy");
-        add(lblEnemy, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 180, -1, -1));
+        add(lblEnemy, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 230, 410, -1));
 
         lblCharacter1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         lblCharacter1.setForeground(new java.awt.Color(255, 255, 255));
-        lblCharacter1.setText("Character");
-        add(lblCharacter1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, -1, -1));
+        lblCharacter1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/character.png"))); // NOI18N
+        add(lblCharacter1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, -1, -1));
+
+        lblEnemyHealth.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        lblEnemyHealth.setForeground(new java.awt.Color(255, 255, 255));
+        lblEnemyHealth.setText("EnemyHealth");
+        add(lblEnemyHealth, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 480, -1, -1));
+
+        lblHealthIcon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Health.png"))); // NOI18N
+        add(lblHealthIcon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, -1, 40));
 
         lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/FightSceneBg.png"))); // NOI18N
         add(lblBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
@@ -151,8 +160,10 @@ public class BattlePanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblBackground;
     private javax.swing.JLabel lblCharacter1;
     private javax.swing.JLabel lblEnemy;
+    private javax.swing.JLabel lblEnemyHealth;
     private javax.swing.JLabel lblHealth;
     private javax.swing.JLabel lblHealthIcon;
+    private javax.swing.JLabel lblHealthIcon1;
     private javax.swing.JLabel lblMana;
     private javax.swing.JLabel lblManaIcon;
     private javax.swing.JLabel lblShield;
