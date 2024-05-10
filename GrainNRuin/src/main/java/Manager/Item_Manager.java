@@ -4,6 +4,7 @@
  */
 package Manager;
 
+import Database.Cards;
 import Database.Relics;
 import java.util.ArrayList;
 import org.bson.Document;
@@ -23,8 +24,8 @@ public class Item_Manager {
     public void insertRelic(Relics relics){
         this.relic.add(relics);
     }
-    public void insertCard(Cards cards){
-        this.card.add(cards);
-    }
+//    public void insertCard(Cards cards){
+//        this.card.add(cards);
+//    }
     
 }
