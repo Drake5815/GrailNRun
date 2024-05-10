@@ -39,6 +39,9 @@ public class GameFrame extends javax.swing.JFrame {
         if (currPanel != null) {
             remove(currPanel);  // Remove the old panel
         }
+        if (newPanel instanceof ShopScene){
+            newPanel = new ShopScene();
+        }
         currPanel = newPanel;  
         add(currPanel); // Add and display the new panel
         revalidate();          // Tell the frame to update layout
@@ -46,7 +49,9 @@ public class GameFrame extends javax.swing.JFrame {
     }
     private void Initialize(){
         panel.add(new Map1());
+//        panel.add(new LoadingPanel());
         panel.add(new RestingScene());
+//        panel.add(new ShopScene());
     }
     public void setPanel(int index){
         changePanel(panel.get(index));

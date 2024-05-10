@@ -69,9 +69,7 @@ public class Relics {
         
         dbManager.Insert();
     }
-    public void getImg(String name){
-        switch(name){
-            default -> System.out.print("No instance image of that certain relic");
-        }
+    public String getImg(){
+        return this.img;
     }
 }
