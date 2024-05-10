@@ -10,7 +10,10 @@
       <Dimension value="[640, 365]"/>
     </Property>
     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[640, 365]"/>
+      <Dimension value="[0, 0]"/>
+    </Property>
+    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[640, 360]"/>
     </Property>
   </Properties>
   <AuxValues>
@@ -25,6 +28,7 @@
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
   </AuxValues>
 
+<<<<<<< HEAD:GrainNRuin/src/main/java/UserInterface/Map1.form
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
@@ -182,6 +186,10 @@
           </Group>
       </Group>
     </DimensionLayout>
+=======
+  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+    <Property name="useNullLayout" type="boolean" value="true"/>
+>>>>>>> origin/Setier:GrainNRuin/src/main/java/Controller/Map1.form
   </Layout>
   <SubComponents>
     <Component class="javax.swing.JButton" name="startPoint1">
@@ -198,6 +206,11 @@
       <AccessibilityProperties>
         <Property name="AccessibleContext.accessibleDescription" type="java.lang.String" value=""/>
       </AccessibilityProperties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="14" y="12" width="-1" height="-1"/>
+        </Constraint>
+      </Constraints>
     </Component>
     <Component class="javax.swing.JButton" name="restM1">
       <Properties>
@@ -222,6 +235,11 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="restM1ActionPerformed"/>
       </Events>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="70" y="40" width="35" height="35"/>
+        </Constraint>
+      </Constraints>
     </Component>
     <Component class="javax.swing.JButton" name="Rare_Occ2">
       <Properties>
@@ -246,6 +264,11 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Rare_Occ2ActionPerformed"/>
       </Events>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="120" y="120" width="35" height="35"/>
+        </Constraint>
+      </Constraints>
     </Component>
     <Component class="javax.swing.JButton" name="fightp1">
       <Properties>
@@ -270,6 +293,11 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fightp1ActionPerformed"/>
       </Events>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="50" y="80" width="35" height="35"/>
+        </Constraint>
+      </Constraints>
     </Component>
     <Component class="javax.swing.JButton" name="fightp2">
       <Properties>
@@ -294,6 +322,11 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fightp2ActionPerformed"/>
       </Events>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="150" y="30" width="35" height="35"/>
+        </Constraint>
+      </Constraints>
     </Component>
     <Component class="javax.swing.JButton" name="FIght_MidBoss">
       <Properties>
@@ -318,6 +351,11 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FIght_MidBossActionPerformed"/>
       </Events>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="270" y="150" width="50" height="50"/>
+        </Constraint>
+      </Constraints>
     </Component>
     <Component class="javax.swing.JButton" name="Rare_Occ1">
       <Properties>
@@ -342,6 +380,11 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Rare_Occ1ActionPerformed"/>
       </Events>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="230" y="40" width="35" height="35"/>
+        </Constraint>
+      </Constraints>
     </Component>
     <Component class="javax.swing.JButton" name="fightp4">
       <Properties>
@@ -365,6 +408,11 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fightp4ActionPerformed"/>
       </Events>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="370" y="120" width="35" height="35"/>
+        </Constraint>
+      </Constraints>
     </Component>
     <Component class="javax.swing.JButton" name="fightp3">
       <Properties>
@@ -389,6 +437,11 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fightp3ActionPerformed"/>
       </Events>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="190" y="190" width="35" height="35"/>
+        </Constraint>
+      </Constraints>
     </Component>
     <Component class="javax.swing.JButton" name="restp1">
       <Properties>
@@ -413,6 +466,11 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="restp1ActionPerformed"/>
       </Events>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="350" y="220" width="35" height="35"/>
+        </Constraint>
+      </Constraints>
     </Component>
     <Component class="javax.swing.JButton" name="fightp5">
       <Properties>
@@ -437,6 +495,11 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fightp5ActionPerformed"/>
       </Events>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="250" y="230" width="35" height="35"/>
+        </Constraint>
+      </Constraints>
     </Component>
     <Component class="javax.swing.JButton" name="fightp6">
       <Properties>
@@ -461,6 +524,11 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fightp6ActionPerformed"/>
       </Events>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="460" y="180" width="35" height="35"/>
+        </Constraint>
+      </Constraints>
     </Component>
     <Component class="javax.swing.JButton" name="fightp8">
       <Properties>
@@ -476,6 +544,11 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fightp8ActionPerformed"/>
       </Events>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="301" y="64" width="35" height="35"/>
+        </Constraint>
+      </Constraints>
     </Component>
     <Component class="javax.swing.JButton" name="fightp7">
       <Properties>
@@ -500,6 +573,11 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fightp7ActionPerformed"/>
       </Events>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="540" y="220" width="35" height="35"/>
+        </Constraint>
+      </Constraints>
     </Component>
     <Component class="javax.swing.JButton" name="restp2">
       <Properties>
@@ -524,6 +602,11 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="restp2ActionPerformed"/>
       </Events>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="490" y="100" width="35" height="35"/>
+        </Constraint>
+      </Constraints>
     </Component>
     <Component class="javax.swing.JButton" name="Rare_Occ3">
       <Properties>
@@ -548,6 +631,11 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Rare_Occ3ActionPerformed"/>
       </Events>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="420" y="260" width="35" height="35"/>
+        </Constraint>
+      </Constraints>
     </Component>
     <Component class="javax.swing.JButton" name="Finale">
       <Properties>
@@ -560,6 +648,11 @@
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
       </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="532" y="12" width="56" height="56"/>
+        </Constraint>
+      </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
@@ -568,6 +661,11 @@
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="14" y="143" width="97" height="175"/>
+        </Constraint>
+      </Constraints>
     </Component>
     <Component class="javax.swing.JButton" name="fightp9">
       <Properties>
@@ -592,6 +690,14 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fightp9ActionPerformed"/>
       </Events>
+<<<<<<< HEAD:GrainNRuin/src/main/java/UserInterface/Map1.form
+=======
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="550" y="150" width="35" height="35"/>
+        </Constraint>
+      </Constraints>
+>>>>>>> origin/Setier:GrainNRuin/src/main/java/Controller/Map1.form
     </Component>
   </SubComponents>
 </Form>

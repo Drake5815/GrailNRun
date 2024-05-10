@@ -21,7 +21,11 @@
         <dependency>
             <groupId>org.netbeans.external</groupId>
             <artifactId>AbsoluteLayout</artifactId>
+<<<<<<< HEAD
             <version>RELEASE170</version>
+=======
+            <version>RELEASE190</version>
+>>>>>>> origin/Setier
         </dependency>
     </dependencies>
     <name>GrailNRuin</name>

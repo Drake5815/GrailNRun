@@ -19,8 +19,23 @@ import org.bson.Document;
 public class InsertNewObject {
     
     public static void main(String[] args){
+<<<<<<< HEAD
         Deck_Manager deckMng = new Deck_Manager();
         
         deckMng.displayDeck();
+=======
+        Relic_Manager rlcManager = new Relic_Manager();
+        Card_Manager crdManager = new Card_Manager();
+
+        /**
+         * Insert 12 new Relics
+         *
+         * Insert 40 new cards
+         */
+        //Loop to insert 12 new Relics
+//        for(int = 0; i < 12; i++){
+//            rlcManager.insertNewRelic();
+//        }
+>>>>>>> origin/Setier
     }
 }

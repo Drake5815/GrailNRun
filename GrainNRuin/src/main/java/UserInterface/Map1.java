@@ -27,7 +27,11 @@ public class Map1 extends javax.swing.JPanel {
         private Image backgroundImage;
         private GameFrame parentFrame;
     public Map1() {
+<<<<<<< HEAD:GrainNRuin/src/main/java/UserInterface/Map1.java
         this.setSize(new Dimension(640,360));
+=======
+        setSize(new Dimension(640,360));
+>>>>>>> origin/Setier:GrainNRuin/src/main/java/Controller/Map1.java
         initComponents();
         initBG();
     } 
@@ -105,12 +109,20 @@ public class Map1 extends javax.swing.JPanel {
         setAutoscrolls(true);
         setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
         setMaximumSize(new java.awt.Dimension(640, 365));
-        setMinimumSize(new java.awt.Dimension(640, 365));
+        setMinimumSize(new java.awt.Dimension(0, 0));
+        setPreferredSize(new java.awt.Dimension(640, 360));
+        setLayout(null);
 
         startPoint1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Attack.png"))); // NOI18N
         startPoint1.setBorder(null);
         startPoint1.setBorderPainted(false);
         startPoint1.setContentAreaFilled(false);
+<<<<<<< HEAD:GrainNRuin/src/main/java/UserInterface/Map1.java
+=======
+        add(startPoint1);
+        startPoint1.setBounds(14, 12, 35, 35);
+        startPoint1.getAccessibleContext().setAccessibleDescription("");
+>>>>>>> origin/Setier:GrainNRuin/src/main/java/Controller/Map1.java
 
         restM1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/UnknownP.png"))); // NOI18N
         restM1.setBorder(null);
@@ -124,6 +136,8 @@ public class Map1 extends javax.swing.JPanel {
                 restM1ActionPerformed(evt);
             }
         });
+        add(restM1);
+        restM1.setBounds(70, 40, 35, 35);
 
         Rare_Occ2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/UnknownP.png"))); // NOI18N
         Rare_Occ2.setBorder(null);
@@ -137,6 +151,8 @@ public class Map1 extends javax.swing.JPanel {
                 Rare_Occ2ActionPerformed(evt);
             }
         });
+        add(Rare_Occ2);
+        Rare_Occ2.setBounds(120, 120, 35, 35);
 
         fightp1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/UnknownP.png"))); // NOI18N
         fightp1.setBorder(null);
@@ -150,6 +166,8 @@ public class Map1 extends javax.swing.JPanel {
                 fightp1ActionPerformed(evt);
             }
         });
+        add(fightp1);
+        fightp1.setBounds(50, 80, 35, 35);
 
         fightp2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/UnknownP.png"))); // NOI18N
         fightp2.setBorder(null);
@@ -163,6 +181,8 @@ public class Map1 extends javax.swing.JPanel {
                 fightp2ActionPerformed(evt);
             }
         });
+        add(fightp2);
+        fightp2.setBounds(150, 30, 35, 35);
 
         FIght_MidBoss.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/UnknownP.png"))); // NOI18N
         FIght_MidBoss.setBorder(null);
@@ -176,6 +196,8 @@ public class Map1 extends javax.swing.JPanel {
                 FIght_MidBossActionPerformed(evt);
             }
         });
+        add(FIght_MidBoss);
+        FIght_MidBoss.setBounds(270, 150, 50, 50);
 
         Rare_Occ1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/UnknownP.png"))); // NOI18N
         Rare_Occ1.setBorder(null);
@@ -189,6 +211,8 @@ public class Map1 extends javax.swing.JPanel {
                 Rare_Occ1ActionPerformed(evt);
             }
         });
+        add(Rare_Occ1);
+        Rare_Occ1.setBounds(230, 40, 35, 35);
 
         fightp4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/UnknownP.png"))); // NOI18N
         fightp4.setBorder(null);
@@ -201,6 +225,8 @@ public class Map1 extends javax.swing.JPanel {
                 fightp4ActionPerformed(evt);
             }
         });
+        add(fightp4);
+        fightp4.setBounds(370, 120, 35, 35);
 
         fightp3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/UnknownP.png"))); // NOI18N
         fightp3.setBorder(null);
@@ -214,6 +240,8 @@ public class Map1 extends javax.swing.JPanel {
                 fightp3ActionPerformed(evt);
             }
         });
+        add(fightp3);
+        fightp3.setBounds(190, 190, 35, 35);
 
         restp1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/UnknownP.png"))); // NOI18N
         restp1.setBorder(null);
@@ -227,6 +255,8 @@ public class Map1 extends javax.swing.JPanel {
                 restp1ActionPerformed(evt);
             }
         });
+        add(restp1);
+        restp1.setBounds(350, 220, 35, 35);
 
         fightp5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/UnknownP.png"))); // NOI18N
         fightp5.setBorder(null);
@@ -240,6 +270,8 @@ public class Map1 extends javax.swing.JPanel {
                 fightp5ActionPerformed(evt);
             }
         });
+        add(fightp5);
+        fightp5.setBounds(250, 230, 35, 35);
 
         fightp6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/UnknownP.png"))); // NOI18N
         fightp6.setBorder(null);
@@ -253,6 +285,8 @@ public class Map1 extends javax.swing.JPanel {
                 fightp6ActionPerformed(evt);
             }
         });
+        add(fightp6);
+        fightp6.setBounds(460, 180, 35, 35);
 
         fightp8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/UnknownP.png"))); // NOI18N
         fightp8.setBorder(null);
@@ -263,6 +297,8 @@ public class Map1 extends javax.swing.JPanel {
                 fightp8ActionPerformed(evt);
             }
         });
+        add(fightp8);
+        fightp8.setBounds(301, 64, 35, 35);
 
         fightp7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/UnknownP.png"))); // NOI18N
         fightp7.setBorder(null);
@@ -276,6 +312,8 @@ public class Map1 extends javax.swing.JPanel {
                 fightp7ActionPerformed(evt);
             }
         });
+        add(fightp7);
+        fightp7.setBounds(540, 220, 35, 35);
 
         restp2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/UnknownP.png"))); // NOI18N
         restp2.setBorder(null);
@@ -289,6 +327,8 @@ public class Map1 extends javax.swing.JPanel {
                 restp2ActionPerformed(evt);
             }
         });
+        add(restp2);
+        restp2.setBounds(490, 100, 35, 35);
 
         Rare_Occ3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/UnknownP.png"))); // NOI18N
         Rare_Occ3.setBorder(null);
@@ -302,14 +342,20 @@ public class Map1 extends javax.swing.JPanel {
                 Rare_Occ3ActionPerformed(evt);
             }
         });
+        add(Rare_Occ3);
+        Rare_Occ3.setBounds(420, 260, 35, 35);
 
         Finale.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/boss.gif"))); // NOI18N
         Finale.setBorder(null);
         Finale.setBorderPainted(false);
         Finale.setContentAreaFilled(false);
+        add(Finale);
+        Finale.setBounds(532, 12, 56, 56);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/legend.png"))); // NOI18N
         jLabel1.setText("jLabel1");
+        add(jLabel1);
+        jLabel1.setBounds(14, 143, 97, 175);
 
         fightp9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/UnknownP.png"))); // NOI18N
         fightp9.setBorder(null);
@@ -323,6 +369,7 @@ public class Map1 extends javax.swing.JPanel {
                 fightp9ActionPerformed(evt);
             }
         });
+<<<<<<< HEAD:GrainNRuin/src/main/java/UserInterface/Map1.java
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -448,6 +495,10 @@ public class Map1 extends javax.swing.JPanel {
         );
 
         startPoint1.getAccessibleContext().setAccessibleDescription("");
+=======
+        add(fightp9);
+        fightp9.setBounds(550, 150, 35, 35);
+>>>>>>> origin/Setier:GrainNRuin/src/main/java/Controller/Map1.java
     }// </editor-fold>//GEN-END:initComponents
 
     private void fightp1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fightp1ActionPerformed
