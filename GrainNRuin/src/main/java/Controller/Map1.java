@@ -49,33 +49,9 @@ public class Map1 extends javax.swing.JPanel {
             System.err.println("Error loading background image: " + e.getMessage());
         }
         
-        setLabelBounds(startPoint1);
-        setLabelBounds(restp2);
-        setLabelBounds(restp1);
-        setLabelBounds(restM1);
-        setLabelBounds(fightp9);
-        setLabelBounds(fightp8);
-        setLabelBounds(fightp7);
-        setLabelBounds(fightp6);
-        setLabelBounds(fightp5);
-        setLabelBounds(fightp4);
-        setLabelBounds(fightp3);
-        setLabelBounds(fightp2);
-        setLabelBounds(fightp1);
-        setLabelBounds(Rare_Occ3);
-        setLabelBounds(Rare_Occ2);
-        setLabelBounds(Rare_Occ1);
-        setLabelBounds(Finale);
-        setLabelBounds(FIght_MidBoss);
     }
 
-    
-    private void setLabelBounds(JButton button) {
-        JLabel label = new JLabel();
-        label.setBounds(button.getBounds());
-        add(label);
-        setComponentZOrder(label, 0);
-    }
+
     
      @Override
     protected void paintComponent(Graphics g) {
@@ -420,6 +396,7 @@ public class Map1 extends javax.swing.JPanel {
     private void fightp2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fightp2ActionPerformed
         // TODO add your handling code here:
         setBattleIcon(fightp2);
+        // call the fight scene 
         
     }//GEN-LAST:event_fightp2ActionPerformed
 
@@ -438,26 +415,32 @@ public class Map1 extends javax.swing.JPanel {
     private void fightp3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fightp3ActionPerformed
         // TODO add your handling code here:
         setBattleIcon(fightp3);
+        // call the fight scene 
     }//GEN-LAST:event_fightp3ActionPerformed
 
     private void fightp8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fightp8ActionPerformed
         // TODO add your handling code here:
         setBattleIcon(fightp8);
+        // call the fight scene 
     }//GEN-LAST:event_fightp8ActionPerformed
 
     private void fightp5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fightp5ActionPerformed
         // TODO add your handling code here:
         setBattleIcon(fightp5);
+        // call the fight scene 
     }//GEN-LAST:event_fightp5ActionPerformed
 
     private void FIght_MidBossActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FIght_MidBossActionPerformed
         // TODO add your handling code here:
+        // call the fight scene nalng ni sya
+        
         
     }//GEN-LAST:event_FIght_MidBossActionPerformed
 
     private void fightp4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fightp4ActionPerformed
         // TODO add your handling code here:
         setBattleIcon(fightp4);
+        // call the fight scene 
     }//GEN-LAST:event_fightp4ActionPerformed
 
     private void restp1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restp1ActionPerformed
@@ -468,21 +451,25 @@ public class Map1 extends javax.swing.JPanel {
     private void fightp6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fightp6ActionPerformed
         // TODO add your handling code here:
         setBattleIcon(fightp6);
+        // call the fight scene 
     }//GEN-LAST:event_fightp6ActionPerformed
 
     private void fightp7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fightp7ActionPerformed
         // TODO add your handling code here:
         setBattleIcon(fightp7);
+        // call the fight scene 
     }//GEN-LAST:event_fightp7ActionPerformed
 
     private void fightp9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fightp9ActionPerformed
         // TODO add your handling code here:
         setBattleIcon(fightp9);
+        // call the fight scene
     }//GEN-LAST:event_fightp9ActionPerformed
 
     private void restp2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restp2ActionPerformed
         // TODO add your handling code here:
         setRestIcon(restp2);
+        // call rest room something
     }//GEN-LAST:event_restp2ActionPerformed
 
 
