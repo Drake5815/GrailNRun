@@ -106,7 +106,11 @@ public class Cards {
         dbManager.Insert();
     }
     
+<<<<<<< HEAD
     public URL getImg(){
+=======
+    public String getImg(){
+>>>>>>> e9982db12cb8964f10f64d22068ce5d96b1f80ce
         return this.img;
     }
     
