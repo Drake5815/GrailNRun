@@ -17,21 +17,18 @@ import javax.swing.JOptionPane;
 public class Login extends javax.swing.JFrame {
 
     private Account acc = new Account();
-    private Database_Manager dbMngr = new Database_Manager();
-    private ImageIcon img = new ImageIcon(getClass().getResource("Images/logo.png"));
     
     /**
      * Creates new form Login
      */
     public Login() {
-//        this.setIconImage(img.getImage());
         initComponents();
         inserts();
     }
     
     private void inserts(){
-            this.setSize(640, 360);
-        
+            this.setSize(400, 300);
+            this.setIconImage(new ImageIcon(this.getClass().getResource("/images/logo.png")).getImage());
             btnRegister.setOpaque(false);
             btnRegister.setContentAreaFilled(false);
             btnRegister.setBorderPainted(false);
@@ -57,8 +54,10 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Grail N' Ruin");
+        setPreferredSize(new java.awt.Dimension(400, 300));
+        setResizable(false);
 
-        jLabel1.setText("GRAIL & RUIN");
+        jLabel1.setText("Grail N' Ruin");
 
         jLabel2.setText("USERNAME:");
 
@@ -97,7 +96,7 @@ public class Login extends javax.swing.JFrame {
                     .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel1))
-                .addContainerGap(106, Short.MAX_VALUE))
+                .addContainerGap(95, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -135,7 +134,7 @@ public class Login extends javax.swing.JFrame {
                 // Starting Screen
                 System.out.println("Start StartingScreen Loader...");
                 JOptionPane.showMessageDialog(this, "Successfully Logged-In!", "Success", JOptionPane.INFORMATION_MESSAGE);
-                new Starting_Screen().setVisible(true);
+                
                 this.setVisible(false);
                 
             } else {

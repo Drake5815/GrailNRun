@@ -7,15 +7,18 @@ package Database;
 import Manager.Database_Manager;
 import java.awt.Image;
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
 
 /**
  *
  * @author Engilo Grave
  */
 public class Enemies implements Stats {
+    private String name;
     private float Health=0, Mana=0, Shield=0;
     private int Strength=0, Intelligence=0, Agility=0;
-    private Image img;
+    
+    private ImageIcon[] img;
     private ArrayList<Image> anim = new ArrayList<>();
 
     private Database_Manager dbManager = new Database_Manager();
@@ -24,7 +27,9 @@ public class Enemies implements Stats {
     public Enemies(){
         
     }
-    public Enemies(float Health, float Mana, float Shield, int Strength, int Intelligence, int Agility){
+    public Enemies(String name, float Health, float Mana, float Shield, int Strength, int Intelligence, int Agility){
+        this.name = name;
+        
         this.Health=Health;
         this.Mana=Mana;
         this.Shield=Shield;

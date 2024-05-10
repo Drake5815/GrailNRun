@@ -4,34 +4,32 @@
  */
 package UserInterface;
 
-import Database.SaveState;
-import Manager.Database_Manager;
+import java.awt.Dimension;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
 
 /**
  *
  * @author Engilo Grave
  */
-public class Starting_Screen extends javax.swing.JFrame {
+public class GameFrame extends javax.swing.JFrame {
 
     /**
-     *  In-Game Variables
+     * Creates new form GameFrame
      */
-    private Database_Manager dbManager = new Database_Manager("Users");
-    
-    private String inGameName;
-    private SaveState ss01;
-    private SaveState ss02;
-    private SaveState ss03;
-    
-    /**
-     * Creates new form Starting_Screen
-     */
-    public Starting_Screen() {
+    public GameFrame() {
+        this.setResizable(false);
+        
+        this.setIconImage(new ImageIcon(this.getClass().getResource("/images/logo.png")).getImage());
+        this.setTitle("Grail N' Ruin");
+        
+        InsertPanel(new LoadingPanel());
+        
         initComponents();
     }
-
-    public Starting_Screen(String Username){
-        initComponents();
+    
+    public void InsertPanel(JPanel gamePanel){
+        this.add(gamePanel);
     }
     
     /**
@@ -49,11 +47,11 @@ public class Starting_Screen extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 640, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 320, Short.MAX_VALUE)
         );
 
         pack();
@@ -76,20 +74,20 @@ public class Starting_Screen extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Starting_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GameFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Starting_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GameFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Starting_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GameFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Starting_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GameFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Starting_Screen().setVisible(true);
+                new GameFrame().setVisible(true);
             }
         });
     }

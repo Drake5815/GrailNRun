@@ -4,13 +4,25 @@
  */
 package Database;
 
+import java.awt.Image;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.Timer;
+
 /**
  *
  * @author Engilo Grave
  */
 public class Avatar implements Stats{
+    
     private float Health=0, Mana=0, Shield=0;
     private int Strength=0, Intelligence=0, Agility=0;
+    
+    private JLabel JCharacter;
+    
+    private ImageIcon[] img;
+    private Timer animationTimer;
+    private int currImageIndex;
     
     public Avatar(){
         
@@ -24,7 +36,38 @@ public class Avatar implements Stats{
         this.Agility = Agility;
     }
     
+    private void OnIdleAnimation(){
+        animationTimer = new Timer(200, (e)->{
+            JCharacter.setIcon(img[currImageIndex]);
+            currImageIndex = (currImageIndex + 1) % img.length;
+        });
+    }
+    private void OnAttackAnimation(){
+        animationTimer = new Timer(200, (e)->{
+            JCharacter.setIcon(img[currImageIndex]);
+            currImageIndex = (currImageIndex + 1) % img.length;
+        });
+    }
+    private void OnDamageAnimation(){
+        animationTimer = new Timer(200, (e)->{
+            JCharacter.setIcon(img[currImageIndex]);
+            currImageIndex = (currImageIndex + 1) % img.length;
+        });
+    }
     
+    public void Animation(int onInstance){
+        switch(onInstance){
+            case 1 -> OnIdleAnimation();
+            case 2 -> OnAttackAnimation();
+            case 3 -> OnDamageAnimation();
+            default -> System.out.print("No Animation Instance that is > than 3");
+        }
+    }
+    
+    
+    public void setJCharacter(JLabel JCharacter){
+        this.JCharacter = JCharacter;
+    }
     
     @Override
     public float getHealth() {
@@ -74,4 +117,5 @@ public class Avatar implements Stats{
     public void setAgility(int Agility) {
         this.Agility = Agility;
     }
+    
 }

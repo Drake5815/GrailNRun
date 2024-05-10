@@ -8,17 +8,13 @@ package UserInterface;
  *
  * @author Engilo Grave
  */
-public class Level_Manager_UI extends javax.swing.JPanel {
+public class StartingScreen extends javax.swing.JPanel {
 
     /**
-     * Return and Implement LevelManager Based On SavedState;
+     * Creates new form StartingScreen
      */
-    
-    
-    /**
-     * Creates new form Level_Manager_UI
-     */
-    public Level_Manager_UI() {
+    public StartingScreen() {
+        this.setSize(640, 720);
         initComponents();
     }
 
