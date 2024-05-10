@@ -28,17 +28,10 @@ public class Item_Manager {
             this.relic.add(rel);
         }
     }
-<<<<<<< HEAD
     public ArrayList getRelic(){
         return this.relic;
     }
     private boolean checkSize(){
         return relic.size() < 3;
     }
-=======
-//    public void insertCard(Cards cards){
-//        this.card.add(cards);
-//    }
-    
->>>>>>> origin/Setier
 }

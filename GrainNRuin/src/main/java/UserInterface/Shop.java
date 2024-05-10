@@ -2,8 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package Controller;
+package UserInterface;
 
+import Database.Cards;
+import Database.Relics;
+import Manager.Level_Manager;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -16,7 +19,8 @@ import javax.swing.JFrame;
  * @author acer
  */
 public class Shop extends javax.swing.JPanel {
-
+    private Level_Manager lvlManager = new Level_Manager();
+    
     /**
      * Creates new form Shop
      */
@@ -27,6 +31,15 @@ public class Shop extends javax.swing.JPanel {
     public Shop() {
         initComponents();
         initBG();
+        implement();
+    }
+    private void implement(){
+        Relics relic = lvlManager.getRandomRelic();
+        Cards card = lvlManager.getRandomCard();
+        this.cardSell.setText("");
+        this.relicSell.setText("");
+        this.cardSell.setIcon(new ImageIcon(relic.getImg()));
+        this.relicSell.setIcon(new ImageIcon(card.getImg()));
     }
     
     public void initBG(){
@@ -56,17 +69,6 @@ public class Shop extends javax.swing.JPanel {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-    
-    public static void main(String[] args){
-        JFrame frame = new JFrame();
-        frame.setSize(640, 340);
-        
-        Shop shop = new Shop();
-        
-        frame.add(shop);
-        
-        frame.setVisible(true);
     }
 
     /**

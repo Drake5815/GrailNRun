@@ -37,6 +37,9 @@ public class Relics {
         this.img = img;
     }
     
+    public String getName(){
+        return this.name;
+    }
     public String getIcon(){
         return this.img;
     }
@@ -69,9 +72,7 @@ public class Relics {
         
         dbManager.Insert();
     }
-    public void getImg(String name){
-        switch(name){
-            default -> System.out.print("No instance image of that certain relic");
-        }
+    public String getImg(){
+        return this.img;
     }
 }

@@ -51,33 +51,10 @@ public class Level_Manager {
             this.avatar.getCharaceter().setHealth(10);
         }
     }
-    public ArrayList ShopScene(){
-        int x = rnd.nextInt(2);
-        switch(x){
-            case 1:
-                return cardRandomized(3);
-            case 2:
-                return relicRandomized(3);
-            default:
-                return null;
-        }
+    public Relics getRandomRelic(){
+        return this.relics.getRndRelic();
     }
-    private ArrayList relicRandomized(int x){
-        ArrayList<Relics> option = new ArrayList<>();
-        int i=0;
-        while(i<x){
-            option.add(relics.getRndRelic());
-            i++;
-        }
-        return option;
-    }
-    private ArrayList cardRandomized(int x){
-        ArrayList<Cards> option = new ArrayList<>();
-        int i=0;
-        while(i<x){
-            option.add(card.getRandomCard());
-            i++;
-        }
-        return option;
+    public Cards getRandomCard(){
+        return this.card.getRandomCard();
     }
 }

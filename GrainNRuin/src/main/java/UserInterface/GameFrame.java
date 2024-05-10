@@ -45,8 +45,9 @@ public class GameFrame extends javax.swing.JFrame {
         repaint();             // Force a redraw
     }
     private void Initialize(){
-        panel.add(new Map1());
+        //panel.add(new Map1());
         panel.add(new RestingScene());
+        panel.add(new Shop());
     }
     public void setPanel(int index){
         changePanel(panel.get(index));
