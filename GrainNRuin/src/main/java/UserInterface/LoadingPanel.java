@@ -21,14 +21,15 @@ import javax.swing.Timer;
 public class LoadingPanel extends JPanel {
     private ImageIcon[] iconArr = new ImageIcon[4];
     private Timer animationTimer,timer;
-    private GameFrame game = new GameFrame();
     private int currImageIndex=0;
     /**
      * Creates new form LoadingPanel
      */
     public LoadingPanel() {
         this.setSize( new Dimension(640,360));
+        
         startAnimation();
+        
     }
     
     private void startAnimation(){
@@ -45,6 +46,16 @@ public class LoadingPanel extends JPanel {
            currImageIndex = (currImageIndex + 1) % iconArr.length;
         });
         animationTimer.start();
+        endAnimation();
+    }
+    private void endAnimation(){
+        timer = new Timer(2000, (e)->{
+            GameFrame game = (GameFrame) SwingUtilities.getWindowAncestor(this);
+            animationTimer.stop();
+            game.changePanel(new Map1());
+        });
+        timer.setRepeats(false);
+        timer.start();
     }
     /**
      *  
