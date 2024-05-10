@@ -24,7 +24,7 @@ public class Relic_Manager {
     
     public Relics getRndRelic(){
         ArrayList<Document> relics = db_Manager.getListDocument("Status", "inactive");
-        int count = db_Manager.getCount();
+        int count = relics.size();
         Random rnd = new Random();
         
         Document result = relics.get(rnd.nextInt(count));

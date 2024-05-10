@@ -19,11 +19,11 @@ public class Card_Manager {
     private Database_Manager db_Manager = new Database_Manager("Cards");
     
     public Cards getRandomCard(){
-        ArrayList<Document> relics = db_Manager.getListDocument("Status", "inactive");
-        int count = db_Manager.getCount();
+        ArrayList<Document> cards = db_Manager.getListDocument("Status", "inactive");
+        int count = cards.size();
         Random rng = new Random();
         
-        Document result = relics.get(rng.nextInt(count));
+        Document result = cards.get(rng.nextInt(count));
         ObjectId cardId = result.getObjectId("_id");
 
         db_Manager.updateDocument("_id", cardId, "Status", "active"); 

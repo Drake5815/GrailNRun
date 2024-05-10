@@ -17,6 +17,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 /**
  *
@@ -45,6 +46,19 @@ public class Map1 extends javax.swing.JPanel {
         } catch (Exception e) {
             System.err.println("Error loading background image: " + e.getMessage());
         }
+    }
+    
+    private void intoFight(){
+        GameFrame parent = (GameFrame) SwingUtilities.getWindowAncestor(this);
+        parent.changePanel(new JPanel());
+    }
+    private void intoShop(){
+        GameFrame parent = (GameFrame) SwingUtilities.getWindowAncestor(this);
+        parent.changePanel(new ShopScene());
+    }
+    private void intoRest(){
+        GameFrame parent = (GameFrame) SwingUtilities.getWindowAncestor(this);
+        parent.setPanel(1);
     }
     
      @Override
@@ -536,8 +550,6 @@ public class Map1 extends javax.swing.JPanel {
     private void restp2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restp2ActionPerformed
         // TODO add your handling code here:
         setRestIcon(restp2);
-        parentFrame = (GameFrame) SwingUtilities.getWindowAncestor(this);
-        parentFrame.changePanel(new RestingScene());
     }//GEN-LAST:event_restp2ActionPerformed
 
 

@@ -34,4 +34,7 @@ public class Item_Manager {
     private boolean checkSize(){
         return relic.size() < 3;
     }
+    /*public void insertCard(Cards cards){
+        this.card.add(cards);
+    }*/
 }

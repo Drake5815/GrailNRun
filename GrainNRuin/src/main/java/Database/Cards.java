@@ -5,6 +5,7 @@
 package Database;
 
 import Manager.Database_Manager;
+import java.net.URL;
 import java.util.HashMap;
 import javax.swing.ImageIcon;
 import org.bson.Document;
@@ -17,7 +18,7 @@ import org.bson.Document;
 public class Cards {
     private Database_Manager dbManager = new Database_Manager("Cards");
     
-    private String img = "G:\\GithubDesktop\\GIT_FinalProj\\GrailNRun\\GrainNRuin\\src\\main\\resources\\images\\cards\\" + this.name;
+    private URL img = getClass().getResource("/images/cards/" + this.name + ".png");
     
     private String name;
     private double Health=0, Damage=0, ManaConsumption=0, Shield=0;
@@ -105,10 +106,8 @@ public class Cards {
         dbManager.Insert();
     }
     
-    public void getImg(String name){
-        switch(name){
-            default -> System.out.print("No instance image of that certain relic");
-        }
+    public URL getImg(){
+        return this.img;
     }
     
     /**
