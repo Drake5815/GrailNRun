@@ -106,8 +106,9 @@ public class BattlePanel extends javax.swing.JPanel {
 
         lblEnemy.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         lblEnemy.setForeground(new java.awt.Color(255, 255, 255));
+        lblEnemy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/enemies/BossEnemy.png"))); // NOI18N
         lblEnemy.setText("Enemy");
-        add(lblEnemy, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 200, -1, -1));
+        add(lblEnemy, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 180, -1, -1));
 
         lblCharacter1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         lblCharacter1.setForeground(new java.awt.Color(255, 255, 255));
