@@ -27,6 +27,11 @@ public class Shop extends javax.swing.JPanel {
     public Shop() {
         initComponents();
         initBG();
+        
+//        goldCoins.setOpaque(true);
+//        set this to true to make text background invisible
+
+        
     }
     
     public void initBG(){
@@ -60,7 +65,7 @@ public class Shop extends javax.swing.JPanel {
     
     public static void main(String[] args){
         JFrame frame = new JFrame();
-        frame.setSize(640, 340);
+        frame.setSize(640, 360);
         
         Shop shop = new Shop();
         
@@ -78,42 +83,53 @@ public class Shop extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        cardSell = new javax.swing.JLabel();
-        relicSell = new javax.swing.JLabel();
+        Card = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        txtGoldCoins = new javax.swing.JLabel();
+        btnExit = new javax.swing.JButton();
+        goldCoins = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(640, 360));
+        setLayout(null);
 
-        cardSell.setText("Card Random");
-        cardSell.setOpaque(true);
+        Card.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Card_Back.png"))); // NOI18N
+        add(Card);
+        Card.setBounds(140, 90, 121, 154);
 
-        relicSell.setText("Random Relic");
-        relicSell.setOpaque(true);
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Relic_Back.png"))); // NOI18N
+        add(jButton1);
+        jButton1.setBounds(350, 90, 121, 154);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(148, 148, 148)
-                .addComponent(cardSell, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(92, 92, 92)
-                .addComponent(relicSell, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(158, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cardSell, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(relicSell, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(119, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Sign.png"))); // NOI18N
+        add(jLabel1);
+        jLabel1.setBounds(280, 20, 50, 20);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/coin.png"))); // NOI18N
+        add(jLabel2);
+        jLabel2.setBounds(600, 20, 20, 20);
+        add(txtGoldCoins);
+        txtGoldCoins.setBounds(560, 20, 0, 0);
+
+        btnExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Exit.png"))); // NOI18N
+        btnExit.setContentAreaFilled(false);
+        add(btnExit);
+        btnExit.setBounds(540, 270, 70, 30);
+
+        goldCoins.setOpaque(true);
+        add(goldCoins);
+        goldCoins.setBounds(560, 20, 0, 0);
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel cardSell;
-    private javax.swing.JLabel relicSell;
+    private javax.swing.JButton Card;
+    private javax.swing.JButton btnExit;
+    private javax.swing.JLabel goldCoins;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel txtGoldCoins;
     // End of variables declaration//GEN-END:variables
 }
