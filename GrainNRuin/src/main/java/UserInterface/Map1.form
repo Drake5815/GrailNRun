@@ -34,10 +34,7 @@
                   <Group type="102" attributes="0">
                       <Component id="startPoint1" min="-2" pref="35" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="character" min="-2" pref="35" max="-2" attributes="0"/>
-                          <Component id="fightp1" min="-2" pref="35" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="fightp1" min="-2" pref="35" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
@@ -147,16 +144,11 @@
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="startPoint1" min="-2" pref="35" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                              <Component id="restM1" min="-2" pref="35" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="fightp1" min="-2" pref="35" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="character" min="-2" pref="35" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="startPoint1" min="-2" pref="35" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                      <Component id="restM1" min="-2" pref="35" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="fightp1" min="-2" pref="35" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                       <Component id="jLabel1" max="32767" attributes="0"/>
                   </Group>
@@ -600,21 +592,6 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fightp9ActionPerformed"/>
       </Events>
-    </Component>
-    <Component class="javax.swing.JLabel" name="character">
-      <Properties>
-        <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/images/CharacterSprite.png"/>
-        </Property>
-        <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
-          <ComponentRef name="character"/>
-        </Property>
-        <Property name="toolTipText" type="java.lang.String" value=""/>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Map1_character"/>
-      </AuxValues>
     </Component>
   </SubComponents>
 </Form>

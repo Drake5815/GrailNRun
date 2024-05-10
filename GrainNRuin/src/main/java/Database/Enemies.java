@@ -1,99 +1,3 @@
-<<<<<<< HEAD
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package Database;
-
-import Manager.Database_Manager;
-import java.awt.Image;
-import java.util.ArrayList;
-import javax.swing.ImageIcon;
-
-/**
- *
- * @author Engilo Grave
- */
-public class Enemies implements Stats {
-    private String name;
-    private float Health=0, Mana=0, Shield=0;
-    private int Strength=0, Intelligence=0, Agility=0;
-    
-    private ImageIcon[] img;
-    private ArrayList<Image> anim = new ArrayList<>();
-
-    private Database_Manager dbManager = new Database_Manager();
-    
-    //Constructor
-    public Enemies(){
-        
-    }
-    public Enemies(String name, float Health, float Mana, float Shield, int Strength, int Intelligence, int Agility){
-        this.name = name;
-        
-        this.Health=Health;
-        this.Mana=Mana;
-        this.Shield=Shield;
-        this.Strength=Strength;
-        this.Intelligence=Intelligence;
-        this.Agility=Agility;
-    }
-    
-    
-    
-    
-    @Override
-    public float getHealth() {
-        return this.Health;
-    }
-    @Override
-    public float getMana() {
-        return this.Mana;
-    }
-    @Override
-    public float getShield() {
-        return this.Shield;
-    }
-    @Override
-    public int getStrength() {
-        return this.Strength;
-    }
-    @Override
-    public int getIntelligence() {
-        return this.Intelligence;
-    }
-    @Override
-    public int getAgility() {
-        return this.Agility;
-    }
-    @Override
-    public void setHealth(float Health) {
-        this.Health = Health;
-    }
-    @Override
-    public void setMana(float Mana) {
-        this.Mana = Mana;
-    }
-    @Override
-    public void setShield(float Shield) {
-        this.Shield = Shield;
-    }
-    @Override
-    public void setStrength(int Strength) {
-        this.Strength = Strength;
-    }
-    @Override
-    public void setIntelligence(int Intelligence) {
-        this.Intelligence = Intelligence;
-    }
-    @Override
-    public void setAgility(int Agility) {
-        this.Agility = Agility;
-    }
-
-    
-}
-=======
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -133,7 +37,7 @@ public class Enemies implements Stats {
     
     
     public String getName(){
-        return this.name;
+        return this.Name;
     }
     @Override
     public float getHealth() {
@@ -160,7 +64,7 @@ public class Enemies implements Stats {
         return this.Agility;
     }
     public void setName(String Name) {
-        this.name = Name;
+        this.Name = Name;
     }
     @Override
     public void setHealth(float Health) {
@@ -187,9 +91,13 @@ public class Enemies implements Stats {
         this.Agility = Agility;
     }
 
-    public void attack(Avatar avatar){
+    public void onAttack(Avatar avatar){
+        specialMove(avatar);
+    }
+    
+    private void attack(Avatar avatar){
         Random rand = new Random();
-        float inflictedDamage;
+        float inflictedDamage=0;
         float currentHealth = avatar.getHealth();
 
         //Adjust damage based on the type of enemy
@@ -200,7 +108,6 @@ public class Enemies implements Stats {
         } else if(this instanceof BigMonster){
             inflictedDamage = rand.nextFloat(61, 71); // 60 - 70 damage if Big Monster
         }
-
         avatar.setHealth(currentHealth - inflictedDamage);
         System.out.println(getName() +" attack for " + inflictedDamage + " damage!");
     }    
@@ -217,24 +124,26 @@ public class Enemies implements Stats {
         enemy.setHealth(health);
     }
 
-    public void specialMove(){
+    private void specialMove(Avatar avatar){
         Random rand = new Random();
         int move = rand.nextInt(3);
         switch(move){
             case 0:
                 if(this instanceof SmallMonster && rand.nextFloat() < 0.3){ // 30% chance to perform a debuffMove
-                    debuffMove();
+                    debuffMove(avatar);
                 } else if(this instanceof MediumMonster && rand.nextFloat() < 0.3){ // 30% chance to perform a magicMove
-                    magicMove();
+                    magicMove(avatar);
                 } else if(this instanceof BigMonster && rand.nextFloat() < 0.3){ // 30% chance to perform a buffMove
                     buffMove();
+                } else {
+                    attack(avatar);
                 }
                 break;
             case 1:
-                attack();
+                attack(avatar);
                 break;
             case 2:
-                attack();
+                attack(avatar);
                 break;
             default:
                 break;
@@ -244,7 +153,7 @@ public class Enemies implements Stats {
     private void debuffMove(Avatar avatar){
         float currentShield = avatar.getShield();
         float currentStrength = avatar.getStrength();
-        float currentAgility = avatar.getAgility();
+        int currentAgility = avatar.getAgility();
         
         avatar.setShield(currentShield - 2);
         avatar.setShield(currentStrength - 2);
@@ -273,8 +182,8 @@ public class Enemies implements Stats {
     }
 
     private void buffMove(){
-        float currentAgility = getAgility();
-        float currentStrength = getStrength();
+        int currentAgility = getAgility();
+        int currentStrength = getStrength();
         float currentShield = getShield();
 
         setAgility(currentAgility + 5);
@@ -302,4 +211,3 @@ class BigMonster extends Enemies{
         super(Name, Health, Mana, Shield, Strength, Intelligence, Agility);
     }
 }
->>>>>>> origin/Laviste

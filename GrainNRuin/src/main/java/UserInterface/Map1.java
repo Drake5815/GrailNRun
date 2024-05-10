@@ -17,6 +17,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.SwingUtilities;
 /**
  *
  * @author acer
@@ -24,7 +25,7 @@ import javax.swing.JLabel;
 public class Map1 extends javax.swing.JPanel {
 
         private Image backgroundImage;
-
+        private GameFrame parentFrame;
     public Map1() {
         this.setSize(new Dimension(640,360));
         initComponents();
@@ -44,33 +45,6 @@ public class Map1 extends javax.swing.JPanel {
         } catch (Exception e) {
             System.err.println("Error loading background image: " + e.getMessage());
         }
-        
-        setLabelBounds(startPoint1);
-        setLabelBounds(restp2);
-        setLabelBounds(restp1);
-        setLabelBounds(restM1);
-        setLabelBounds(fightp9);
-        setLabelBounds(fightp8);
-        setLabelBounds(fightp7);
-        setLabelBounds(fightp6);
-        setLabelBounds(fightp5);
-        setLabelBounds(fightp4);
-        setLabelBounds(fightp3);
-        setLabelBounds(fightp2);
-        setLabelBounds(fightp1);
-        setLabelBounds(Rare_Occ3);
-        setLabelBounds(Rare_Occ2);
-        setLabelBounds(Rare_Occ1);
-        setLabelBounds(Finale);
-        setLabelBounds(FIght_MidBoss);
-    }
-
-    
-    private void setLabelBounds(JButton button) {
-        JLabel label = new JLabel();
-        label.setBounds(button.getBounds());
-        add(label);
-        setComponentZOrder(label, 0);
     }
     
      @Override
@@ -127,7 +101,6 @@ public class Map1 extends javax.swing.JPanel {
         Finale = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         fightp9 = new javax.swing.JButton();
-        character = new javax.swing.JLabel();
 
         setAutoscrolls(true);
         setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
@@ -351,11 +324,6 @@ public class Map1 extends javax.swing.JPanel {
             }
         });
 
-        character.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        character.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CharacterSprite.png"))); // NOI18N
-        character.setLabelFor(character);
-        character.setToolTipText("");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -366,9 +334,7 @@ public class Map1 extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(startPoint1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(character, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(fightp1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(fightp1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(39, 39, 39)
@@ -452,14 +418,11 @@ public class Map1 extends javax.swing.JPanel {
                                         .addGap(15, 15, 15)))
                                 .addGap(63, 63, 63))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(startPoint1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(2, 2, 2)
-                                .addComponent(restM1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(fightp1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(character, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(startPoint1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(2, 2, 2)
+                        .addComponent(restM1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(fightp1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(12, 12, 12)
                         .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
@@ -501,7 +464,8 @@ public class Map1 extends javax.swing.JPanel {
     private void restM1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restM1ActionPerformed
         // TODO add your handling code here:
         setRestIcon(restM1);
-        
+        parentFrame = (GameFrame) SwingUtilities.getWindowAncestor(this);
+        parentFrame.changePanel(new RestingScene());
     }//GEN-LAST:event_restM1ActionPerformed
 
     private void fightp2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fightp2ActionPerformed
@@ -550,6 +514,8 @@ public class Map1 extends javax.swing.JPanel {
     private void restp1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restp1ActionPerformed
         // TODO add your handling code here:
         setRestIcon(restp1);
+        parentFrame = (GameFrame) SwingUtilities.getWindowAncestor(this);
+        parentFrame.changePanel(new RestingScene());
     }//GEN-LAST:event_restp1ActionPerformed
 
     private void fightp6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fightp6ActionPerformed
@@ -570,6 +536,8 @@ public class Map1 extends javax.swing.JPanel {
     private void restp2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restp2ActionPerformed
         // TODO add your handling code here:
         setRestIcon(restp2);
+        parentFrame = (GameFrame) SwingUtilities.getWindowAncestor(this);
+        parentFrame.changePanel(new RestingScene());
     }//GEN-LAST:event_restp2ActionPerformed
 
 
@@ -579,7 +547,6 @@ public class Map1 extends javax.swing.JPanel {
     private javax.swing.JButton Rare_Occ1;
     private javax.swing.JButton Rare_Occ2;
     private javax.swing.JButton Rare_Occ3;
-    private javax.swing.JLabel character;
     private javax.swing.JButton fightp1;
     private javax.swing.JButton fightp2;
     private javax.swing.JButton fightp3;

@@ -15,6 +15,7 @@ import javax.swing.Timer;
  * @author Engilo Grave
  */
 public class GameFrame extends javax.swing.JFrame {
+    private ArrayList<JPanel> panel = new ArrayList<>();
     /**
      * Creates new form GameFrame
      */
@@ -31,6 +32,7 @@ public class GameFrame extends javax.swing.JFrame {
         this.setTitle("Grail N' Ruin");
         
         initComponents();
+        Initialize();
         changePanel(gamePanel);
     }
     public void changePanel(JPanel newPanel) {
@@ -41,6 +43,13 @@ public class GameFrame extends javax.swing.JFrame {
         add(currPanel); // Add and display the new panel
         revalidate();          // Tell the frame to update layout
         repaint();             // Force a redraw
+    }
+    private void Initialize(){
+        panel.add(new Map1());
+        panel.add(new RestingScene());
+    }
+    public void setPanel(int index){
+        changePanel(panel.get(index));
     }
     /**
      * This method is called from within the constructor to initialize the form.
