@@ -8,6 +8,7 @@ import Database.Cards;
 import Database.Relics;
 import Manager.Level_Manager;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.net.URL;
@@ -29,17 +30,25 @@ public class Shop extends javax.swing.JPanel {
     
     
     public Shop() {
+        this.setSize(new Dimension(640,360));
         initComponents();
         initBG();
-        implement();
+//        implement();
     }
     private void implement(){
         Relics relic = lvlManager.getRandomRelic();
         Cards card = lvlManager.getRandomCard();
-        this.cardSell.setText("");
-        this.relicSell.setText("");
-        this.cardSell.setIcon(new ImageIcon(relic.getImg()));
-        this.relicSell.setIcon(new ImageIcon(card.getImg()));
+        
+        if(relic != null){
+            System.out.println("relic Inserted");
+        }
+        if (card != null){
+            System.out.println("card Inserted");
+        }
+        this.jCard.setText("");
+        this.jRelic.setText("");
+        this.jCard.setIcon(new ImageIcon(relic.getImg()));
+        this.jRelic.setIcon(new ImageIcon(card.getImg()));
     }
     
     public void initBG(){
@@ -80,42 +89,58 @@ public class Shop extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        cardSell = new javax.swing.JLabel();
-        relicSell = new javax.swing.JLabel();
+        jCard = new javax.swing.JButton();
+        jRelic = new javax.swing.JButton();
 
         setMaximumSize(new java.awt.Dimension(640, 360));
 
-        cardSell.setText("Card Random");
-        cardSell.setOpaque(true);
+        jCard.setIcon(new javax.swing.ImageIcon("G:\\GithubDesktop\\GIT_FinalProj\\GrailNRun\\GrainNRuin\\src\\main\\resources\\images\\cards\\Cataclysm.png")); // NOI18N
+        jCard.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCardActionPerformed(evt);
+            }
+        });
 
-        relicSell.setText("Random Relic");
-        relicSell.setOpaque(true);
+        jRelic.setIcon(new javax.swing.ImageIcon("G:\\GithubDesktop\\GIT_FinalProj\\GrailNRun\\GrainNRuin\\src\\main\\resources\\images\\Agi&IntNecklace.png")); // NOI18N
+        jRelic.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRelicActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(148, 148, 148)
-                .addComponent(cardSell, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(92, 92, 92)
-                .addComponent(relicSell, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(158, Short.MAX_VALUE))
+                .addGap(78, 78, 78)
+                .addComponent(jCard, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(56, 56, 56)
+                .addComponent(jRelic, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(64, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(90, 90, 90)
+                .addGap(71, 71, 71)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cardSell, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(relicSell, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(119, Short.MAX_VALUE))
+                    .addComponent(jCard, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jRelic, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jCardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCardActionPerformed
+        System.out.println("Item Inserted");
+    }//GEN-LAST:event_jCardActionPerformed
+
+    private void jRelicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRelicActionPerformed
+        System.out.println("Item Inserted");
+    }//GEN-LAST:event_jRelicActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel cardSell;
-    private javax.swing.JLabel relicSell;
+    private javax.swing.JButton jCard;
+    private javax.swing.JButton jRelic;
     // End of variables declaration//GEN-END:variables
 }

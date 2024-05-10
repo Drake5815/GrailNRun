@@ -20,7 +20,7 @@ public class Card_Manager {
     
     public Cards getRandomCard(){
         ArrayList<Document> relics = db_Manager.getListDocument("Status", "inactive");
-        int count = db_Manager.getCount();
+        int count = relics.size();
         Random rng = new Random();
         
         Document result = relics.get(rng.nextInt(count));
