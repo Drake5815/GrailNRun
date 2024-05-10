@@ -9,6 +9,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.net.URL;
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 
 /**
  *
@@ -22,6 +23,7 @@ public class BattlePanel extends javax.swing.JPanel {
     private Image backgroundImage;
     
     public BattlePanel() {
+        
         initComponents();
         initBG();
     }
@@ -70,7 +72,15 @@ public class BattlePanel extends javax.swing.JPanel {
         lblHealth = new javax.swing.JLabel();
         lblShield = new javax.swing.JLabel();
         lblMana = new javax.swing.JLabel();
-        btnDrawCard = new javax.swing.JButton();
+        btnSkipTurn = new javax.swing.JButton();
+        lblHealthIcon = new javax.swing.JLabel();
+        lblShieldIcon = new javax.swing.JLabel();
+        lblManaIcon = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        lblCharacter = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnCard1.setPreferredSize(new java.awt.Dimension(121, 154));
         btnCard1.addActionListener(new java.awt.event.ActionListener() {
@@ -78,6 +88,7 @@ public class BattlePanel extends javax.swing.JPanel {
                 btnCard1ActionPerformed(evt);
             }
         });
+        add(btnCard1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, -1, -1));
 
         btnCard2.setPreferredSize(new java.awt.Dimension(121, 154));
         btnCard2.addActionListener(new java.awt.event.ActionListener() {
@@ -85,74 +96,58 @@ public class BattlePanel extends javax.swing.JPanel {
                 btnCard2ActionPerformed(evt);
             }
         });
+        add(btnCard2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 192, -1, -1));
 
+        btnCard3.setAutoscrolls(true);
         btnCard3.setPreferredSize(new java.awt.Dimension(121, 154));
         btnCard3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCard3ActionPerformed(evt);
             }
         });
+        add(btnCard3, new org.netbeans.lib.awtextra.AbsoluteConstraints(399, 192, -1, -1));
 
         lblHealth.setText("HealthIndicator");
+        add(lblHealth, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 215, 71, -1));
 
         lblShield.setText("ShieldIndicator");
+        add(lblShield, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 249, 70, -1));
 
         lblMana.setText("ManaIndicator");
+        add(lblMana, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 283, 67, -1));
 
-        btnDrawCard.setText("Draw Card");
-        btnDrawCard.addActionListener(new java.awt.event.ActionListener() {
+        btnSkipTurn.setText("Skip Turn");
+        btnSkipTurn.setToolTipText("");
+        btnSkipTurn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDrawCardActionPerformed(evt);
+                btnSkipTurnActionPerformed(evt);
             }
         });
+        add(btnSkipTurn, new org.netbeans.lib.awtextra.AbsoluteConstraints(538, 246, 100, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblHealth)
-                    .addComponent(lblShield)
-                    .addComponent(lblMana))
-                .addGap(35, 35, 35)
-                .addComponent(btnCard1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(btnCard2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnCard3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnDrawCard)
-                .addContainerGap(21, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(192, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(lblHealth)
-                        .addGap(33, 33, 33)
-                        .addComponent(lblShield)
-                        .addGap(36, 36, 36)
-                        .addComponent(lblMana)
-                        .addGap(41, 41, 41))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnCard3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnCard2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnCard1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(14, 14, 14))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnDrawCard)
-                        .addGap(89, 89, 89))))
-        );
+        lblHealthIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Health.png"))); // NOI18N
+        add(lblHealthIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 214, -1, -1));
+
+        lblShieldIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Shield.png"))); // NOI18N
+        add(lblShieldIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 248, -1, -1));
+
+        lblManaIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Mana.png"))); // NOI18N
+        add(lblManaIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 282, -1, -1));
+
+        jLabel2.setText("enemy");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 80, 130, -1));
+
+        lblCharacter.setText("character");
+        add(lblCharacter, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/FightSceneBg.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 360));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnDrawCardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDrawCardActionPerformed
+    private void btnSkipTurnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSkipTurnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnDrawCardActionPerformed
+    }//GEN-LAST:event_btnSkipTurnActionPerformed
 
     private void btnCard3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCard3ActionPerformed
         // TODO add your handling code here:
@@ -166,14 +161,27 @@ public class BattlePanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCard1ActionPerformed
 
+    public static void main(String[] args){
+        JFrame frame = new JFrame();
+        frame.setSize(640,360);
+        BattlePanel obj = new BattlePanel();
+        frame.add(obj);
+        frame.setVisible(true);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCard1;
     private javax.swing.JButton btnCard2;
     private javax.swing.JButton btnCard3;
-    private javax.swing.JButton btnDrawCard;
+    private javax.swing.JButton btnSkipTurn;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel lblCharacter;
     private javax.swing.JLabel lblHealth;
+    private javax.swing.JLabel lblHealthIcon;
     private javax.swing.JLabel lblMana;
+    private javax.swing.JLabel lblManaIcon;
     private javax.swing.JLabel lblShield;
+    private javax.swing.JLabel lblShieldIcon;
     // End of variables declaration//GEN-END:variables
 }

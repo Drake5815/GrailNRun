@@ -25,8 +25,8 @@ public class InsertNewObject {
          * Insert 40 new cards
          */
         //Loop to insert 12 new Relics
-        for(int = 0; i < 12; i++){
-            rlcManager.insertNewRelic();
-        }
+//        for(int = 0; i < 12; i++){
+//            rlcManager.insertNewRelic();
+//        }
     }
 }

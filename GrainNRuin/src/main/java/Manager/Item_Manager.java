@@ -23,8 +23,8 @@ public class Item_Manager {
     public void insertRelic(Relics relics){
         this.relic.add(relics);
     }
-    public void insertCard(Cards cards){
+    /*public void insertCard(Cards cards){
         this.card.add(cards);
-    }
+    }*/
     
 }
