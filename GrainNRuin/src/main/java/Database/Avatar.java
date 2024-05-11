@@ -20,7 +20,7 @@ public class Avatar implements Stats{
     
     private JLabel JCharacter;
     
-    private ImageIcon[] img;
+    private ImageIcon img = new ImageIcon(getClass().getResource("/images/character.png"));
     private Timer animationTimer;
     private int currImageIndex;
     
@@ -36,33 +36,33 @@ public class Avatar implements Stats{
         this.Agility = Agility;
     }
     
-    private void OnIdleAnimation(){
-        animationTimer = new Timer(200, (e)->{
-            JCharacter.setIcon(img[currImageIndex]);
-            currImageIndex = (currImageIndex + 1) % img.length;
-        });
-    }
-    private void OnAttackAnimation(){
-        animationTimer = new Timer(200, (e)->{
-            JCharacter.setIcon(img[currImageIndex]);
-            currImageIndex = (currImageIndex + 1) % img.length;
-        });
-    }
-    private void OnDamageAnimation(){
-        animationTimer = new Timer(200, (e)->{
-            JCharacter.setIcon(img[currImageIndex]);
-            currImageIndex = (currImageIndex + 1) % img.length;
-        });
-    }
-    
-    public void Animation(int onInstance){
-        switch(onInstance){
-            case 1 -> OnIdleAnimation();
-            case 2 -> OnAttackAnimation();
-            case 3 -> OnDamageAnimation();
-            default -> System.out.print("No Animation Instance that is > than 3");
-        }
-    }
+//    private void OnIdleAnimation(){
+//        animationTimer = new Timer(200, (e)->{
+//            JCharacter.setIcon(img[currImageIndex]);
+//            currImageIndex = (currImageIndex + 1) % img.length;
+//        });
+//    }
+//    private void OnAttackAnimation(){
+//        animationTimer = new Timer(200, (e)->{
+//            JCharacter.setIcon(img[currImageIndex]);
+//            currImageIndex = (currImageIndex + 1) % img.length;
+//        });
+//    }
+//    private void OnDamageAnimation(){
+//        animationTimer = new Timer(200, (e)->{
+//            JCharacter.setIcon(img[currImageIndex]);
+//            currImageIndex = (currImageIndex + 1) % img.length;
+//        });
+//    }
+//    
+//    public void Animation(int onInstance){
+//        switch(onInstance){
+//            case 1 -> OnIdleAnimation();
+//            case 2 -> OnAttackAnimation();
+//            case 3 -> OnDamageAnimation();
+//            default -> System.out.print("No Animation Instance that is > than 3");
+//        }
+//    }
     
     @Override
     public float getHealth() {
@@ -87,6 +87,9 @@ public class Avatar implements Stats{
     @Override
     public int getAgility() {
         return this.Agility;
+    }
+    public ImageIcon getImage(){
+        return this.img;
     }
     @Override
     public void setHealth(float Health) {

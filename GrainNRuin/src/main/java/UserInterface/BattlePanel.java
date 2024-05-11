@@ -4,10 +4,14 @@
  */
 package UserInterface;
 
+import Database.Avatar;
 import Database.Cards;
+import Database.Enemies;
+import Manager.Deck_Manager;
 import Manager.Level_Manager;
 import java.awt.Dimension;
 import java.util.ArrayList;
+import java.util.Random;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
@@ -19,6 +23,10 @@ import javax.swing.SwingUtilities;
 public class BattlePanel extends javax.swing.JPanel {
     private GameFrame parent;
     private Level_Manager lvlManager;
+    
+    private ArrayList<Cards> onHand = new ArrayList<>();
+    
+    private float currHealth, currMana, currShield;
     /**
      * Creates new form BattlePanel
      */
@@ -33,23 +41,34 @@ public class BattlePanel extends javax.swing.JPanel {
         startGame();
     }
     private void startGame(){
-        ArrayList<Cards> onHand = new ArrayList<>();
-        onHand.add(this.lvlManager.getrndCards());
-        onHand.add(this.lvlManager.getrndCards());
-        onHand.add(this.lvlManager.getrndCards());
+        Deck_Manager AvatarDeck = this.lvlManager.getAvatar().getManager();
+        ArrayList<Cards> deck = AvatarDeck.getDeck();
+        Random rnd = new Random();
         
-        ImageIcon card1 = new ImageIcon(onHand.get(0).getImg());
-        ImageIcon card2 = new ImageIcon(onHand.get(1).getImg());
-        ImageIcon card3 = new ImageIcon(onHand.get(2).getImg());
+        Avatar character = this.lvlManager.getAvatar().getCharaceter();
+        currHealth = character.getHealth();
+        currMana = character.getMana();
+        currShield = character.getShield();
         
-        btnCard1.setIcon(card1);
-        btnCard2.setIcon(card2);
-        btnCard3.setIcon(card3);
+        this.onHand.add(deck.get(rnd.nextInt(deck.size())));
+        this.onHand.add(deck.get(rnd.nextInt(deck.size())));
+        this.onHand.add(deck.get(rnd.nextInt(deck.size())));
+        //Set Cards
+        btnCard1.setIcon(this.onHand.get(0).getIcon());
+        btnCard2.setIcon(this.onHand.get(1).getIcon());
+        btnCard3.setIcon(this.onHand.get(2).getIcon());
+        //Set Character
+        lblCharacter1.setIcon(character.getImage());
+        lblCharacter1.setText("");
+        
+        lblHealth.setText(Float.toString(currHealth) + " / "+ Float.toString(character.getHealth()));
+        lblMana.setText(Float.toString(currMana)+" / "+Float.toString(character.getMana()));
+        lblShield.setText(Float.toString(currShield)+" / "+Float.toString(character.getShield()));
+        //Set Enemies
+        
     }
-    
-    
-    private void TurnOrder(){
-        
+    private boolean Restrict(){
+        return onHand.size() > 3;
     }
     
     /**
@@ -96,7 +115,6 @@ public class BattlePanel extends javax.swing.JPanel {
         add(lblShield, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 530, 190, 50));
 
         lblHealthIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Health.png"))); // NOI18N
-        lblHealthIcon.setPreferredSize(new java.awt.Dimension(45, 45));
         add(lblHealthIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, -1, 40));
 
         lblShieldIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Shield.png"))); // NOI18N
@@ -145,7 +163,7 @@ public class BattlePanel extends javax.swing.JPanel {
         lblCharacter1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         lblCharacter1.setForeground(new java.awt.Color(255, 255, 255));
         lblCharacter1.setText("Character");
-        add(lblCharacter1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, -1, -1));
+        add(lblCharacter1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, -1, -1));
 
         lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/FightSceneBg.png"))); // NOI18N
         add(lblBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
@@ -164,7 +182,7 @@ public class BattlePanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnCard3ActionPerformed
 
     private void btnSkipTurnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSkipTurnActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_btnSkipTurnActionPerformed
     public static void main(String[] args){
         JFrame frame = new JFrame();

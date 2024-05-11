@@ -29,23 +29,6 @@ public class Level_Manager {
     public Level_Manager(){
         
     }
-    
-    public void FightScene(){
-        int countTurn=0;
-        
-        float charAgi = this.avatar.getCharaceter().getAgility();
-        float EnemyAgi = this.enemy.getAgility();
-        
-        if(countTurn == 0){
-            if(charAgi > EnemyAgi){
-                //Character goes first and set even numbers to char turn;
-                
-            } else {
-                //Enemy goes first and set even number to enemy turn;
-                
-            }
-        }
-    }
     public void RestScene(){
         if (this.avatar.getCharaceter().getHealth() < 10){
             System.out.println("System Healing on progress");
@@ -58,5 +41,11 @@ public class Level_Manager {
     }
     public Cards getrndCards(){
         return this.card.getRandomCard();
+    }
+    public UI_Controller getAvatar(){
+        return this.avatar;
+    }
+    public Enemies getEnemy(){
+        return this.enemy;
     }
 }

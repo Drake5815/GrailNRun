@@ -8,6 +8,7 @@ import Manager.Database_Manager;
 import java.awt.Image;
 import java.util.ArrayList;
 import java.util.Random;
+import javax.swing.ImageIcon;
 /**
  *
  * @author Engilo Grave
@@ -16,7 +17,7 @@ public class Enemies implements Stats {
     private String Name;
     private float Health=0, Mana=0, Shield=0;
     private int Strength=0, Intelligence=0, Agility=0;
-    private Image img;
+    private ImageIcon img;
     private ArrayList<Image> anim = new ArrayList<>();
 
     private Database_Manager dbManager = new Database_Manager();
@@ -35,7 +36,17 @@ public class Enemies implements Stats {
         this.Agility=Agility;
     }
     
-    
+    public ImageIcon getImage(){
+        if(this instanceof SmallMonster){
+            return new ImageIcon(getClass().getResource("/images/enemies/SmallEnemies.png"));
+        } else if (this instanceof MediumMonster){
+            return new ImageIcon(getClass().getResource("/images/enemies/ModBossEnemy.png"));
+        } else if (this instanceof BigMonster){
+            return new ImageIcon(getClass().getResource("/images/enemies/BossEnemy.png"));
+        } else {
+            return null;
+        }
+    }
     public String getName(){
         return this.Name;
     }
@@ -195,18 +206,27 @@ public class Enemies implements Stats {
 }
 
 class SmallMonster extends Enemies{
+    public SmallMonster(){
+        super("SmallMonster", 10, 2, 0, 2, 0, 1);
+    }
     public SmallMonster(String Name, float Health, float Mana, float Shield, int Strength, int Intelligence, int Agility){
         super(Name, Health, Mana, Shield, Strength, Intelligence, Agility);
     }
 }
 
 class MediumMonster extends Enemies{
+    public MediumMonster(){
+        super("MediumMonster", 20,10,0,5,3,5);
+    }
     public MediumMonster(String Name, float Health, float Mana, float Shield, int Strength, int Intelligence, int Agility){
         super(Name, Health, Mana, Shield, Strength, Intelligence, Agility);
     }
 }
 
 class BigMonster extends Enemies{
+    public BigMonster(){
+        super("BigMonster", 100,20,0,10,10,10);
+    }
     public BigMonster(String Name, float Health, float Mana, float Shield, int Strength, int Intelligence, int Agility){
         super(Name, Health, Mana, Shield, Strength, Intelligence, Agility);
     }

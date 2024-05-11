@@ -4,8 +4,11 @@
  */
 package com.mycompany.grailnruin;
 
+import Controller.UI_Controller;
 import Database.Cards;
 import Manager.Card_Manager;
+import Manager.Deck_Manager;
+import java.util.ArrayList;
 
 /**
  *
@@ -13,10 +16,14 @@ import Manager.Card_Manager;
  */
 public class Tester {
     public static void main(String[] args){
-        Card_Manager card = new Card_Manager();
+        ArrayList<Cards> deck = new UI_Controller().getManager().getDeck();
         
-        Cards newCard = card.getRandomCard();
+        if(deck.get(0).getIcon() != null){
+            System.out.println("Cards intergrated ");
+        } else {
+            System.out.println("Cards Missing ");
+        }
         
-        System.out.println("Cards URL: " + newCard.getIcon());
+        System.out.println("Cards URL: " + deck.get(0).getIcon());
     }
 }

@@ -71,8 +71,8 @@ public class UI_Controller {
     public void PlayCard(Cards onPlay){
         this.onDisplay.remove(onPlay);
     }
-    public Cards Draw(){
-        return this.onDisplay.add(Deck.get(rnd.nextInt(Deck.size())));
+    public void Draw(){
+        this.onDisplay.add(Deck.get(rnd.nextInt(Deck.size())));
     }
     /**
      * 
@@ -81,7 +81,7 @@ public class UI_Controller {
     public Avatar getCharaceter(){
         return this.Character;
     }
-    public Deck_Manager Manager(){
+    public Deck_Manager getManager(){
         return this.deckManager;
     }
 }
