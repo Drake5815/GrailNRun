@@ -38,9 +38,9 @@ public class Enemies implements Stats {
     
     public ImageIcon getImage(){
         if(this instanceof SmallMonster){
-            return new ImageIcon(getClass().getResource("/images/enemies/SmallEnemies.png"));
+            return new ImageIcon(getClass().getResource("/images/enemies/SmallEnemy.png"));
         } else if (this instanceof MediumMonster){
-            return new ImageIcon(getClass().getResource("/images/enemies/ModBossEnemy.png"));
+            return new ImageIcon(getClass().getResource("/images/enemies/MidBossEnemy.png"));
         } else if (this instanceof BigMonster){
             return new ImageIcon(getClass().getResource("/images/enemies/BossEnemy.png"));
         } else {
@@ -202,32 +202,5 @@ public class Enemies implements Stats {
         setShield(currentShield + 5);
 
         System.out.println(getName() + " has boosted their stats!");
-    }
-}
-
-class SmallMonster extends Enemies{
-    public SmallMonster(){
-        super("SmallMonster", 10, 2, 0, 2, 0, 1);
-    }
-    public SmallMonster(String Name, float Health, float Mana, float Shield, int Strength, int Intelligence, int Agility){
-        super(Name, Health, Mana, Shield, Strength, Intelligence, Agility);
-    }
-}
-
-class MediumMonster extends Enemies{
-    public MediumMonster(){
-        super("MediumMonster", 20,10,0,5,3,5);
-    }
-    public MediumMonster(String Name, float Health, float Mana, float Shield, int Strength, int Intelligence, int Agility){
-        super(Name, Health, Mana, Shield, Strength, Intelligence, Agility);
-    }
-}
-
-class BigMonster extends Enemies{
-    public BigMonster(){
-        super("BigMonster", 100,20,0,10,10,10);
-    }
-    public BigMonster(String Name, float Health, float Mana, float Shield, int Strength, int Intelligence, int Agility){
-        super(Name, Health, Mana, Shield, Strength, Intelligence, Agility);
     }
 }

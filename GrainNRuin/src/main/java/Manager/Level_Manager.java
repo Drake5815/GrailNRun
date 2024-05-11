@@ -5,9 +5,12 @@
 package Manager;
 
 import Controller.UI_Controller;
+import Database.BigMonster;
 import Database.Cards;
 import Database.Enemies;
+import Database.MediumMonster;
 import Database.Relics;
+import Database.SmallMonster;
 import java.util.ArrayList;
 import java.util.Random;
 import javax.swing.JPanel;
@@ -46,6 +49,19 @@ public class Level_Manager {
         return this.avatar;
     }
     public Enemies getEnemy(){
-        return this.enemy;
+        Random rnd = new Random();
+        int cnt = rnd.nextInt(1,3);
+        
+        Enemies sE = new SmallMonster();
+        Enemies mE = new MediumMonster();
+        Enemies bE = new BigMonster();
+        
+        return switch (cnt) {
+            case 1 -> sE;
+            case 2 -> mE;
+            case 3 -> bE;
+            default -> null;
+        };
+        
     }
 }

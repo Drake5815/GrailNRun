@@ -7,6 +7,9 @@ package UserInterface;
 import Database.Avatar;
 import Database.Cards;
 import Database.Enemies;
+import Database.SmallMonster;
+import Database.MediumMonster;
+import Database.BigMonster;
 import Manager.Deck_Manager;
 import Manager.Level_Manager;
 import java.awt.Dimension;
@@ -65,6 +68,20 @@ public class BattlePanel extends javax.swing.JPanel {
         lblMana.setText(Float.toString(currMana)+" / "+Float.toString(character.getMana()));
         lblShield.setText(Float.toString(currShield)+" / "+Float.toString(character.getShield()));
         //Set Enemies
+        Enemies enemy = this.lvlManager.getEnemy();
+        lblEnemy.setIcon(enemy.getImage());
+        lblEnemy.setText("");
+    }
+    private void isUsed(int btn){
+        if(btn == 1){
+            this.onHand.remove(btn-1);
+        } else if(btn == 2){
+            
+        } else{
+            
+        }
+    }
+    private boolean drawable(){
         
     }
     private boolean Restrict(){
@@ -117,12 +134,12 @@ public class BattlePanel extends javax.swing.JPanel {
         add(lblShield, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 530, 190, 50));
 
         lblHealthIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Health.png"))); // NOI18N
-<<<<<<< HEAD
+
         add(lblHealthIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, -1, 40));
-=======
+
         lblHealthIcon.setPreferredSize(new java.awt.Dimension(45, 45));
         add(lblHealthIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 470, -1, 40));
->>>>>>> origin/Asia
+
 
         lblShieldIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Shield.png"))); // NOI18N
         add(lblShieldIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, 50, 40));
@@ -169,10 +186,10 @@ public class BattlePanel extends javax.swing.JPanel {
 
         lblCharacter1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         lblCharacter1.setForeground(new java.awt.Color(255, 255, 255));
-<<<<<<< HEAD
+
         lblCharacter1.setText("Character");
         add(lblCharacter1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, -1, -1));
-=======
+
         lblCharacter1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/character.png"))); // NOI18N
         add(lblCharacter1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, -1, -1));
 
@@ -183,7 +200,7 @@ public class BattlePanel extends javax.swing.JPanel {
 
         lblHealthIcon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Health.png"))); // NOI18N
         add(lblHealthIcon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, -1, 40));
->>>>>>> origin/Asia
+
 
         lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/FightSceneBg.png"))); // NOI18N
         add(lblBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
